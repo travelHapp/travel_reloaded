@@ -57,7 +57,7 @@ class TravelController extends Controller
 
     public function register()
     {
-        return '<h1>Hola mundo desde el controlador</h1>';
+        return view('register');
     }
 
 
