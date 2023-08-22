@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Travel;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -37,9 +38,26 @@ class TravelController extends Controller
             'description'=>'required',
         ]);
 
+        $user = new User([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+
         Travel::create($request->all());
         return redirect()->route('happy_travel.index')->with('success', '¡Destino agregado exitosamente!');
+
+        User::register($request->all());
+        // return redirect()->route('happy_travel.store')->with('success', '¡Usuario agregado exitosamente!');
+
     }
+
+    public function register()
+    {
+        return '<h1>Hola mundo desde el controlador</h1>';
+    }
+
 
     /**
      * Display the specified resource.

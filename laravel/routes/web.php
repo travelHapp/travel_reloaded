@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('happy_travel', TravelController::class);
+// Route::get('happy_travel/register', [TravelController::class, 'register'])->name('register');
+Route::get('/register', [TravelController::class, 'register']);
