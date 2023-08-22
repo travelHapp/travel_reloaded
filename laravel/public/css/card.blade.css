@@ -1,20 +1,19 @@
 .card-img-top {
-    width: 100%; /* Ajusta el valor según tus preferencias */
-    height: 300px; /* Para mantener la proporción original */
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 20px;
-  }
-  
-  /* Personalizar el espacio entre las tarjetas si es necesario */
-  .card {
-    margin: 20px; /* Ajusta el valor según tus preferencias */
+}
+
+.card {
+    margin: 20px;
     padding: 0;
     background-color: #FBFDCE;
     border: none;
     border-radius: 20px;
     color: #0079FF;
-  }
+}
 
-  .card-title {
+.card-title {
     font-weight: 700;
-  }
+}
