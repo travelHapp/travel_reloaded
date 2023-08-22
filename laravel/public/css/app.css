@@ -1,0 +1,10 @@
+:root{
+    --font-color: #0079FF;
+    --green-button: #00DFA2;
+    --pink-button:#FF0060;
+    --background-color: #FBFDCE;
+}
+
+body {
+    font-family: 'Jaldi', sans-serif;
+}
