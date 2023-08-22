@@ -1,0 +1,41 @@
+h2 {
+    color: var(--pink-button);
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+h3 {
+    color: var(--pink-button);
+}
+
+p {
+    color: var(--font-color);
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.show-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+    width: 700;
+    height: 700px;
+}
+.show-image {
+    width: 556px;
+    height:557px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 100px 0 0 60px;
+}
+
+.show-text {
+    margin-left: 100px;
+    max-width: 35%;
+
+}
+
+.icon {
+    margin-right:10px;
+}

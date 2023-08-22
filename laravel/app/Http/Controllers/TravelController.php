@@ -46,10 +46,11 @@ class TravelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Travel $travel)
-    {
-        //
-    }
+    public function show($id)
+{
+    $travel = Travel::findOrFail($id);
+    return view('show', compact('travel'));
+}
 
     /**
      * Show the form for editing the specified resource.
