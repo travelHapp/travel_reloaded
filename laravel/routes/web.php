@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TravelController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ Route::get('/', function () {
 });
 
 Route::resource('happy_travel', TravelController::class);
-Route::get('/register', [TravelController::class, 'register']);
+
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom'); 
+Route::get('register', [AuthController::class, 'register'])->name('register-user');
+Route::post('custom-register', [AuthController::class, 'customRegister'])->name('register.custom'); 
+Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
