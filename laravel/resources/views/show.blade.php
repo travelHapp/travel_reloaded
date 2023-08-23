@@ -13,8 +13,13 @@
         </div>
         <div class="icon-container">
             <img class="icon-edit" src="{{ asset('assets/Edit-icon.svg') }}" alt="icono editar">
-            <img class="icon-delete" src="{{ asset('assets/Delete-icon.svg') }}" alt="icono borrar">
+            <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
+                <img class="icon-delete" src="{{ asset('assets/Delete-icon.svg') }}" alt="icono borrar">
+            </a>
         </div>
     </div>
 </div>
+
+@component('components.delete-confirmation-modal', ['travel' => $travel])
+@endcomponent
 @endsection
