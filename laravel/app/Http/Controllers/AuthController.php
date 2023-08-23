@@ -22,10 +22,12 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('happy_travel')
-                        ->withSuccess('Signed in');
+                        ->withSuccess('Inicio de sesión exitoso');
         }
   
-        return redirect("auth.login")->withSuccess('Login details are not valid');
+        return redirect("auth.login")->withSuccess('Los detalles de inicio de sesión no son válidos');
+
+       
     }
 
     public function register()
@@ -42,10 +44,17 @@ class AuthController extends Controller
         ]);
            
         $data = $request->all();
-        $check = $this->create($data);
-         
-        return redirect("happy_travel")->withSuccess('You have signed-in');
+        $user = $this->create($data);
+
+        if ($user) {
+            Auth::login($user);
+            return redirect()->route('happy_travel')->withSuccess('Te has registrado exitosamente');
+        } else {
+            return redirect()->route('register')->with('error', 'Hubo un problema al registrarte');
+        }
     }
+         
+        
 
     public function create(array $data)
     {
@@ -60,6 +69,6 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
   
-        return Redirect('auth.login');
+        return redirect('auth.login');
     }
 }
