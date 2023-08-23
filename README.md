@@ -45,7 +45,7 @@
    5. [Developers](#developers)
 
 ## 🗃 Información General
-Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? La empresa HappyTravel les ha contratado para desarrollar una aplicación web, para que las personas puedan contar los destinos que les encantaría visitar y su razón. El objetivo es que usuarios no autenticados puedan mirar todos los destinos soñados de otros usuarios y a su vez un usuario autenticado pueda crear, editar y eliminar su propios sueños viajeros.
+Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? La empresa HappyTravel nos ha contratado para desarrollar una aplicación web, para que las personas puedan contar los destinos que les encantaría visitar y su razón. El objetivo es que usuarios no autenticados puedan mirar todos los destinos soñados de otros usuarios y a su vez un usuario autenticado pueda crear, editar y eliminar su propios sueños viajeros.
 
 ## Mockups
 
@@ -55,7 +55,7 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 #### Versión Desktop
 <img src="./laravel/public/assets/desktop.png" width=900px>
 
-#### Versión Desktop
+#### Versión Mobile
 <img src="./laravel/public/assets/version-mobile.png" width=900px>
 
 
