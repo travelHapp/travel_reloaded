@@ -12,7 +12,7 @@
    2. [Mockups](#mockups)
    3. [Tecnologías](#tecnologías)
    4. [Herramientas](#herramientas)
-   5. [Developers](#developers)
+   5. [Recursos](#recursos)
 
 ## 🗃 Información General
 Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? La empresa HappyTravel nos ha contratado para desarrollar una aplicación web, para que las personas puedan contar los destinos que les encantaría visitar y su razón. El objetivo es que usuarios no autenticados puedan mirar todos los destinos soñados de otros usuarios y a su vez un usuario autenticado pueda crear, editar y eliminar su propios sueños viajeros.
@@ -65,7 +65,12 @@ Esta es una aplicación para guardar y compartir destinos, entoncés para que te
 `php artisan db:seed --class=DestinationsTableSeeder`
 
 y finalmente para ver el proyecto en tú navegador ejecuta el comando 
+
 `php artisan server`
 
-Y disfruta de la experiencia de guardar tus destinos favoritos.
+Y disfruta de la experiencia de ver y guardar destinos.
 
+## Recursos
+- [login y register](https://www.positronx.io/laravel-custom-authentication-login-and-registration-tutorial/)
+
+- [CRUD](https://www.youtube.com/watch?v=Rxz0GwUassM)

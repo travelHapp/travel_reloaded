@@ -36,7 +36,7 @@ class TravelController extends Controller
             'name'=>'required',
             'location'=>'required',
             'image'=>'required',
-            'description'=>'required',
+            'description'=>'required'
         ]);
 
         Travel::create($request->all());
@@ -75,16 +75,4 @@ class TravelController extends Controller
     {
         //
     }
-
-    public function search(Request $request)
-    {
-        $searchTerm = $request->input('search');
-
-        $travels = Travel::where('name', 'like', '%' . $searchTerm . '%')
-                          ->orWhere('location', 'like', '%' . $searchTerm . '%')
-                          ->get();
-
-        return view('index', compact('travels'));
-    }
-    
 }
