@@ -5,10 +5,10 @@
             <img src="{{ asset('assets/Logo.svg') }}" alt="imagen del Logo">
         </div>
         <div class="search-input-container">
-            <form action="{{ route('travel.search') }}" method="GET">
+            <form id="search-form" action="{{ route('travel.search') }}" method="GET">
                 <div class="form-control-container">
                     <input type="text" id="search" name="search" class="form-control" placeholder="Search...">
-                    <img class="search-icon" src="{{ asset('assets/Glass-icon.svg') }}" alt="icono de búsqueda">
+                    <img id="search-icon" class="search-icon" src="{{ asset('assets/Glass-icon.svg') }}" alt="icono de búsqueda">
                 </div>
             </form>
         </div>
@@ -25,3 +25,15 @@
     
 </nav>
 <div class="blue-line"></div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchIcon = document.getElementById('search-icon');
+        const searchForm = document.getElementById('search-form');
+
+        searchIcon.addEventListener('click', function() {
+            searchForm.submit();
+        });
+    });
+</script>
