@@ -9,9 +9,9 @@
             <form id="deleteForm" action="{{ route('happy_travel.destroy', $travel->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Aceptar</button>
+                    <button type="submit" class="btn btn-danger accept-button">Aceptar</button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary cancel-button" data-dismiss="modal">Cancelar</button>
                 
             </div>
         </div>
@@ -32,7 +32,6 @@
     deleteForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Realizar una solicitud DELETE al servidor
         fetch(`/happy_travel/${travelId}`, {
             method: 'DELETE',
             headers: {
@@ -57,6 +56,5 @@
         window.location.href = "{{ route('happy_travel.show', $travel->id) }}";
     });
 });
-
 </script>
 </div>
