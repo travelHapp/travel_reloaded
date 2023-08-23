@@ -1,0 +1,11 @@
+.modal-info{
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #FBFDCE;
+}
+
+.text-modal{
+    color: #0079FF;
+    font-size: 25px;
+}
