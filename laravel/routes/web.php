@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('happy_travel', TravelController::class);
+
+Route::get('/search', [TravelController::class, 'search'])->name('travel.search');
