@@ -36,7 +36,7 @@ class TravelController extends Controller
             'name'=>'required',
             'location'=>'required',
             'image'=>'required',
-            'description'=>'required',
+            'description'=>'required'
         ]);
 
         Travel::create($request->all());
