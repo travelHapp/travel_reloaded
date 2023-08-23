@@ -65,7 +65,8 @@ Esta es una aplicación para guardar y compartir destinos, entoncés para que te
 `php artisan db:seed --class=DestinationsTableSeeder`
 
 y finalmente para ver el proyecto en tú navegador ejecuta el comando 
+
 `php artisan server`
 
-Y disfruta de la experiencia de guardar tus destinos favoritos.
+Y disfruta de la experiencia de ver y guardar destinos.
 
