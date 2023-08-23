@@ -20,37 +20,29 @@
             <form action="{{ route('happy_travel.store') }}" method="POST" class="create-dest">
                 @csrf
 
-             <div class="form_create row">
+             <div class="form_create col">
                <div class="columna1 col-md-6">
-                <div class="mb-4">
-                    <label for="validationTooltip01" class="form-label">Título</label>
-                    <input type="text" name="name" class="form-control shadow-top" id="validationTooltip01" placeholder="Indica el nombre del destino">
-                </div>
-                <div class="mb-4">
-                    <label for="validationTooltip01" class="form-label">Ubicación</label>
-                    <input type="text" name="location" class="form-control shadow-top" id="validationTooltip01" placeholder="Indica el destino">
-                </div>
-
-                <div class="add_file mb-5">
-                    <label for="validationTextarea" class="form-label">Imagen</label>
-                    <div class="input-group">
-                        <label class="input-group-text" for="fileInput">
-                            <input type="file" name="image" id="fileInput" class="d-none" accept="image/*">
-                            <img class="img_add" src="{{ asset('assets/add_file.svg') }}" alt="Icono de carpeta" width="30" height="30">
-                        </label>
-                        <input type="text" class="form-control shadow-top blue-background" placeholder="Sube una imagen" readonly>
+                    <div class="mb-4">
+                        <label for="validationTooltip01" class="form-label">Título</label>
+                        <input type="text" name="name" class="form-control shadow-top" id="validationTooltip01" placeholder="Indica el nombre del destino">
                     </div>
-                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                    <div class="mb-4">
+                        <label for="validationTooltip01" class="form-label">Ubicación</label>
+                        <input type="text" name="location" class="form-control shadow-top" id="validationTooltip01" placeholder="Indica el destino">
+                    </div>
+
+                    <div class="add_file mb-5">
+                        <label for="validationTextarea" class="form-label">Imagen</label>
+                        <div class="input-group">
+                            <label class="input-group-text" for="fileInput">
+                                <input type="file" name="image" id="fileInput" class="d-none" accept="image/*">
+                                <img class="img_add" src="{{ asset('assets/add_file.svg') }}" alt="Icono de carpeta" width="30" height="30">
+                            </label>
+                            <input type="text" class="form-control shadow-top blue-background" placeholder="Sube una imagen" readonly>
+                        </div>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                    </div>
                 </div>
-
-
-                            <div class="mb-1">
-                                <button class="btn accept me-4" type="submit">Aceptar</button>
-                                <!-- <button class="btn btn-danger" type="button">Cancelar</button> -->
-                                <a href="{{ route('happy_travel.store') }}" class="btn btn-danger">Cancelar</a>
-                            </div>
-            </form>
-         </div>
 
                 <div class="columna2 col-md-6">
                     <div class="mb-3 row">
@@ -58,6 +50,20 @@
                         <textarea class="form-control shadow-top blue-background custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino"></textarea>
                     </div>
                 </div>
+</div>
+
+                <div class="mb-1">
+                    <button class="btn accept me-4" type="submit">Aceptar</button>
+                    <!-- <button class="btn btn-danger" type="button">Cancelar</button> -->
+                    <a href="{{ route('happy_travel.store') }}" class="btn btn-danger">Cancelar</a>
+                </div>
+
+            </form>
+
+            
+        </div>
+
+        
     </div>
 </div>
 
