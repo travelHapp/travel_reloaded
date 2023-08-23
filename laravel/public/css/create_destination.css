@@ -1,0 +1,100 @@
+.form-container {
+    border: 5px solid rgb(255, 255, 110);
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 3%;
+    width: 60%;
+    color: #0079FF;
+}
+
+.columna1, .columna2{
+    padding: 10px 20px;
+}
+
+h2{
+    font-weight: 900;
+    display: flex;
+    margin: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: red;   
+    font-size:25px;
+    border-bottom:2px red solid;
+}
+
+.form_create{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.blue-background{
+    color: #0079FF;
+}
+
+.form_create .form-label{
+    font-weight:700;
+    margin: auto;
+    margin-bottom: 0%;
+}
+
+.form-control{
+ width: 100%;
+ margin: auto;
+ border: none;
+}
+
+.shadow-top {
+    box-shadow: inset 0px 7px 5px -5px rgba(0, 0, 0, 0.75);
+}
+
+.custom-textarea{
+    width: 100%;
+    height: 350px;
+}
+
+.custom-textarea::placeholder{
+    color: #0079FF;
+}
+
+.accept{
+    background: rgba(0, 223, 162, 1);
+}
+
+.accept:hover{
+    background: rgb(58, 248, 67);
+    color: white;
+}
+
+.btn{
+    margin-top: 35px;
+    width: 110px;
+    border-radius: 40px;
+    height: 38px;
+}
+
+
+.add_file .input-group {
+    display: flex;
+    align-items: center;
+    background-color: #0079FF;
+    border-radius: 80px;
+}
+
+.add_file .input-group .input-group-text {
+    cursor: pointer;
+    background-color: #0079FF;
+    margin-right: 5px;
+    border: none;
+}
+
+.add_file .input-group img {
+    display: block;
+    background-color: #0079FF;
+}
+
+.img_add{
+    background-color: #0079FF;
+}

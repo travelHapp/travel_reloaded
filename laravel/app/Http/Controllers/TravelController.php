@@ -74,16 +74,4 @@ class TravelController extends Controller
     {
         //
     }
-
-    public function search(Request $request)
-    {
-        $searchTerm = $request->input('search');
-
-        $travels = Travel::where('name', 'like', '%' . $searchTerm . '%')
-                          ->orWhere('location', 'like', '%' . $searchTerm . '%')
-                          ->get();
-
-        return view('index', compact('travels'));
-    }
-    
 }
