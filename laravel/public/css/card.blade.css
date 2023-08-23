@@ -8,12 +8,28 @@
 .card {
     margin: 20px;
     padding: 0;
-    background-color: #FBFDCE;
+    background-color: var(--background-color);
     border: none;
     border-radius: 20px;
-    color: #0079FF;
+    color: var(--font-color);
+}
+
+.card-body {
+    max-height: 150px;
+}
+
+.card-title,
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .card-title {
     font-weight: 700;
+    font-size: 25px;
+}
+
+.card-text {
+    font-size: 20px;
 }

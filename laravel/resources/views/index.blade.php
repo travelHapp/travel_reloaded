@@ -2,7 +2,7 @@
 @section('content')
 
 <div>
-    <!-- <a href="{{ route('happy_travel.create') }}"  class="btn btn-primary">Page Introducir destino</a> -->
+    <a href="{{ route('happy_travel.create') }}"  class="btn btn-primary">Page Introducir destino</a>
     <div class="row">
     @foreach($travels as $travel)
         <div class="col-md-3 col-sm-6">
