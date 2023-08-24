@@ -34,14 +34,16 @@
         deleteModal.show();
         
         // Asignar el travelId al formulario
-        deleteForm.setAttribute('action', `{{ route('happy_travel.destroy', $travel->id) }}`);
+        const actionUrl = `{{ route('happy_travel.destroy', ':id') }}`.replace(':id', travelId);
+        deleteForm.setAttribute('action', actionUrl);
+
 
     });
 
     deleteForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const action = deleteForm.getAttribute('action'); // Obtener la URL del formulario
+        const action = deleteForm.getAttribute('action');
 
         console.log('action:', action);
         fetch(action, {
@@ -60,12 +62,13 @@
         })
         .catch(error => {
             console.error('Error de red:', error);
+            console.error(error.message)
         });
     });
 
     const cancelDeleteButton = document.querySelector('#deleteModal .btn-secondary');
     cancelDeleteButton.addEventListener('click', function() {
-        window.location.href = "{{ route('happy_travel.show', $travel->id) }}";
+        window.location.href = "{{ route('happy_travel.show', $travel) }}";
     });
 });
 
