@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -77,17 +78,27 @@ class TravelController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Travel $travel)
-    {
-        //
-    }
+   
+public function edit($id)
+{
+    $travel = Travel::findOrFail($id);
+    return view('travel.edit', compact('travel'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Travel $travel)
+    public function update(Request $request, $id)
     {
-        //
+        $travel = Travel::findOrFail($id);
+
+        $travel->update([
+            'name' => $request->input('name'),
+            'location' => $request->input('location'),
+            'description' => $request->input('description'),
+        ]);
+
+        return redirect()->route('happy_travel.show', ['happy_travel' => $travel]);
     }
 
     /**

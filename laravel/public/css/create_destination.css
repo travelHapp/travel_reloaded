@@ -62,12 +62,12 @@ h2{
 }
 
 .accept{
+    color: white;
     background: rgba(0, 223, 162, 1);
 }
 
 .accept:hover{
     background: rgb(58, 248, 67);
-    color: white;
 }
 
 .btn{
