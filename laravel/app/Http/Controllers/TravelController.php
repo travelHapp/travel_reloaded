@@ -6,6 +6,7 @@ use App\Models\Travel;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class TravelController extends Controller
 {
@@ -42,19 +43,26 @@ class TravelController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName); // Guarda la imagen en la carpeta public/images
+            $image->move(public_path('images'), $imageName); 
             $imagePath = 'images/' . $imageName;
         }
     
-        Travel::create([
+     
+        $travel = new Travel([
             'name' => $request->name,
             'location' => $request->location,
-            'image' => $imagePath ?? null, // Si hay una imagen, guarda la ruta en la base de datos
-            'description' => $request->description
+            'image' => $imagePath ?? null, 
+            'description' => $request->description,
+            'privacy' => 'private', 
         ]);
+    
+    
+        $user = Auth::user();
+        $user->travels()->save($travel);
     
         return redirect()->route('happy_travel.index')->with('success', '¡Destino agregado exitosamente!');
     }
+    
     
 
     /**
