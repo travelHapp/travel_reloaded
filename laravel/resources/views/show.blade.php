@@ -13,8 +13,10 @@
         </div>
         <div class="icon-container">
             @if(Auth::check() && $travel->user_id === Auth::user()->id)
-                <img class="icon-edit" src="{{ asset('assets/Edit-icon.svg') }}" alt="icono editar">
-                <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal" data-travel-id="{{ $travel->id }}">
+                <a href="{{ route('travel.edit', ['id' => $travel->id]) }}">
+                    <img class="icon-edit" src="{{ asset('assets/Edit-icon.svg') }}" alt="icono editar">
+                </a>          
+                <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
                     <img class="icon-delete" src="{{ asset('assets/Delete-icon.svg') }}" alt="icono borrar">
                 </a>
             @endif
