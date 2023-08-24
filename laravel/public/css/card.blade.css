@@ -37,6 +37,9 @@
 .card-link {
     text-decoration: none;
   }
+  .icon-info{
+    width: 40px;
+  }
 
   @media (max-width: 767px) {
     .card-link {
