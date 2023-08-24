@@ -104,7 +104,13 @@ class TravelController extends Controller
              if ($travel->user_id !== Auth::user()->id) {
                  return response()->json(['success' => false, 'error' => 'No tienes permiso para eliminar este destino.']);
              }
- 
+
+             $imagePath = public_path($travel->image);
+
+             if (file_exists($imagePath)) {
+                 unlink($imagePath);
+             }
+
              $travel->delete();
              return response()->json(['success' => true, 'message' => 'Destino eliminado exitosamente']);
          } catch (ModelNotFoundException $e) {
