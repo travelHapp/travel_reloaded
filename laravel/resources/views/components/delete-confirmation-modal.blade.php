@@ -26,13 +26,25 @@
 
     deleteLink.addEventListener('click', function(event) {
         event.preventDefault();
+
+        // Obtener el travelId desde el atributo data
+        const travelId = deleteLink.getAttribute('data-travel-id');
+        console.log('travelId:', travelId);
+        
         deleteModal.show();
+        
+        // Asignar el travelId al formulario
+        deleteForm.setAttribute('action', `{{ route('happy_travel.destroy', $travel->id) }}`);
+
     });
 
     deleteForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        fetch(`/happy_travel/${travelId}`, {
+        const action = deleteForm.getAttribute('action'); // Obtener la URL del formulario
+
+        console.log('action:', action);
+        fetch(action, {
             method: 'DELETE',
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}',
@@ -56,5 +68,6 @@
         window.location.href = "{{ route('happy_travel.show', $travel->id) }}";
     });
 });
+
 </script>
 </div>

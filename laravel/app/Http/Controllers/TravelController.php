@@ -93,12 +93,13 @@ class TravelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($id): RedirectResponse
     {
     $travel = Travel::findOrFail($id)->delete();
 
     return redirect()->route('happy_travel.index')->with('success', '¡Destino eliminado exitosamente!');
     }
+    
     public function search(Request $request)
     {
     $searchTerm = $request->input('search');

@@ -26,5 +26,6 @@ Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login
 Route::get('register', [AuthController::class, 'register'])->name('register-user');
 Route::post('custom-register', [AuthController::class, 'customRegister'])->name('register.custom'); 
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
-Route::delete('/happy_travel/{travel}', [TravelController::class, 'destroy'])->name('happy_travel.destroy');
+Route::delete('/happy_travel/{id}', 'TravelController@destroy')->name('happy_travel.destroy');
+
 
