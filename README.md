@@ -75,22 +75,4 @@ Y disfruta de la experiencia de ver y guardar destinos.
 
 - [CRUD](https://www.youtube.com/watch?v=Rxz0GwUassM)
 
-
-
-
-NOTA: Para poder las imagenes que sean publicas y privadas necesitamos una nueva miración para ello ir a la raíz del proyecto y poner 
-
-php artisan make:migration add_privacy_to_destinations
-
-abre el archivo de migracion recien creado y edita 
-
-public function up()
-{
-    Schema::table('destinations', function (Blueprint $table) {
-        $table->string('privacy')->default('public'); // Agrega la columna 'privacy'
-    });
-}
-
-
-ahora ejecuta 
-php artisan migrate
+- [CRUD Laravel 10](https://www.youtube.com/watch?v=MJp8ycjNW5s)
