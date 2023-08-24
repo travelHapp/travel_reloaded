@@ -2,10 +2,10 @@
     width: 500px;
     height: 200px;
     border-radius: 20px;
-    background-color: #FBFDCE;
+    background-color: var(--background-color);
 }
 
 .text-modal{
-    color: #0079FF;
+    color: var(--font-color);
     font-size: 25px;
 }
