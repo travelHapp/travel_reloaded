@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         if ($user) {
             Auth::login($user);
-            return redirect()->route('happy_travel')->withSuccess('Te has registrado exitosamente');
+            return redirect()->route('happy_travel.index')->withSuccess('Te has registrado exitosamente');
         } else {
             return redirect()->route('register')->with('error', 'Hubo un problema al registrarte');
         }
