@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.blade.css') }}">
     <link rel="stylesheet" href="{{ asset('css/show.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal-style.css') }}">
     <title>Happy Travel</title>
 </head>
 <body>

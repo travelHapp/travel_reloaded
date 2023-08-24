@@ -13,6 +13,9 @@
             @endif
         @endforeach
     </div>
+ 
+    <div>
+    @include('components.modal')
 </div>
 @endsection
 
