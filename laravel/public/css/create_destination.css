@@ -66,12 +66,13 @@ h2{
 }
 
 .accept{
+    color:var(--bg-card);
     background: var(--green-button);
 }
 
 .accept:hover{
     background: var(--accept-hover);
-    color:var(--bg-card);
+    
 }
 
 .btn{
