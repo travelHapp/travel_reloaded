@@ -43,7 +43,7 @@
 
                 <div class="mb-1">
                     <button class="btn accept me-4" type="submit">Aceptar</button>
-                    <a href="{{ route('happy_travel.show', ['happy_travel' => $travel->id]) }}" class="btn btn-danger">Cancelar</a>
+                    <a href="{{ route('happy_travel.show', ['happy_travel' => $travel->id]) }}" class="btn cancel btn-danger">Cancelar</a>
                 </div>
             </form>
         </div>

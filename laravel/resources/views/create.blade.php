@@ -56,7 +56,7 @@
                 <div class="mb-1">
                     <button class="btn accept me-4" type="submit">Aceptar</button>
                     <!-- <button class="btn btn-danger" type="button">Cancelar</button> -->
-                    <a href="{{ route('happy_travel.store') }}" class="btn btn-danger">Cancelar</a>
+                    <a href="{{ route('happy_travel.store') }}" class="btn cancel btn-danger">Cancelar</a>
                 </div>
 
             </form>

@@ -70,9 +70,16 @@ h2{
     background: var(--green-button);
 }
 
+.cancel {
+    background-color: var(--pink-button);
+    border: none;
+}
+
 .accept:hover{
-    background: var(--accept-hover);
-    
+    background: var(--accept-hover); 
+}
+.cancel:hover{
+    background-color: var(--font-color);
 }
 
 .btn{
@@ -131,7 +138,7 @@ h2{
     .mb-1 {
         width: 100%; 
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
