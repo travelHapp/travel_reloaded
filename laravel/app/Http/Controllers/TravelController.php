@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TravelController extends Controller
 {
@@ -93,12 +95,25 @@ class TravelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id): RedirectResponse
-    {
-    $travel = Travel::findOrFail($id)->delete();
 
-    return redirect()->route('happy_travel.index')->with('success', '¡Destino eliminado exitosamente!');
-    }
+     public function destroy($id): JsonResponse
+     {
+         try {
+             $travel = Travel::findOrFail($id);
+ 
+             if ($travel->user_id !== Auth::user()->id) {
+                 return response()->json(['success' => false, 'error' => 'No tienes permiso para eliminar este destino.']);
+             }
+ 
+             $travel->delete();
+             return response()->json(['success' => true, 'message' => 'Destino eliminado exitosamente']);
+         } catch (ModelNotFoundException $e) {
+             return response()->json(['success' => false, 'error' => 'El destino no se encontró.']);
+         } catch (\Exception $e) {
+             return response()->json(['success' => false, 'error' => $e->getMessage()]);
+         }
+     }
+ 
     
     public function search(Request $request)
     {
@@ -110,4 +125,5 @@ class TravelController extends Controller
 
     return view('index', compact('travels'));
 }
+
 }
