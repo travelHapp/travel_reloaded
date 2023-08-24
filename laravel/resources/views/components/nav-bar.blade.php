@@ -13,19 +13,28 @@
             </form>
         </div>
         <div class="navbar-icons">
-            <img class="icon-nav" src="{{ asset('assets/Avatar-icon.svg') }}" alt="icono perfil">
-            <a href="{{ route('happy_travel.create') }}" class="nav-link">
-                <img class="icon-nav" src="{{ asset('assets/Create-icon.svg') }}" alt="icono de agregar destino">
-            </a>
+            @guest
+                <a href="{{ route('register-user') }}" class="nav-link">
+                    <img class="icon-nav" src="{{ asset('assets/Avatar-icon.svg') }}" alt="icono perfil">
+                </a>
+            @endguest
+            
+            @auth
+                <a href="{{ route('happy_travel.create') }}" class="nav-link">
+                    <img class="icon-nav" src="{{ asset('assets/Create-icon.svg') }}" alt="icono de agregar destino">
+                </a>
+                <a href="{{ route('signout') }}" class="nav-link">
+                    <img class="icon-nav" src="{{ asset('assets/Logout-icon.svg') }}" alt="icono de cerrar sesión">
+                </a>
+            @endauth
+            
             <a href="{{ route('happy_travel.index') }}" class="nav-link">
                 <img class="icon-nav" src="{{ asset('assets/Home-icon.svg') }}" alt="icono home">
             </a>
         </div> 
     </div>
-    
 </nav>
 <div class="blue-line"></div>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

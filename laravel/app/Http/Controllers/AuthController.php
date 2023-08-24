@@ -66,9 +66,7 @@ class AuthController extends Controller
     }    
     
     public function signOut() {
-        Session::flush();
         Auth::logout();
-  
-        return redirect('auth.login');
+        return redirect()->route('happy_travel.index');
     }
 }

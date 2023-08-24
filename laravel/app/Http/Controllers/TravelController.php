@@ -86,9 +86,19 @@ class TravelController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-{
+    {
     $travel = Travel::findOrFail($id)->delete();
 
     return redirect()->route('happy_travel.index')->with('success', '¡Destino eliminado exitosamente!');
+    }
+    public function search(Request $request)
+    {
+    $searchTerm = $request->input('search');
+
+    $travels = Travel::where('name', 'like', '%' . $searchTerm . '%')
+                      ->orWhere('location', 'like', '%' . $searchTerm . '%')
+                      ->get();
+
+    return view('index', compact('travels'));
 }
 }
