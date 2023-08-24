@@ -33,15 +33,29 @@ class TravelController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name'=>'required',
-            'location'=>'required',
-            'image'=>'required',
-            'description'=>'required'
+            'name' => 'required',
+            'location' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Agrega validación para la imagen
+            'description' => 'required'
+        ]); 
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName); // Guarda la imagen en la carpeta public/images
+            $imagePath = 'images/' . $imageName;
+        }
+    
+        Travel::create([
+            'name' => $request->name,
+            'location' => $request->location,
+            'image' => $imagePath ?? null, // Si hay una imagen, guarda la ruta en la base de datos
+            'description' => $request->description
         ]);
-
-        Travel::create($request->all());
+    
         return redirect()->route('happy_travel.index')->with('success', '¡Destino agregado exitosamente!');
     }
+    
 
     /**
      * Display the specified resource.

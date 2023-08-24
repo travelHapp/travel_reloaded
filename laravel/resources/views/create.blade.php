@@ -17,7 +17,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('happy_travel.store') }}" method="POST" class="create-dest">
+            <form action="{{ route('happy_travel.store') }}" method="POST" class="create-dest" enctype="multipart/form-data">
                 @csrf
 
              <div class="form_create col">
@@ -51,6 +51,7 @@
                     </div>
                 </div>
 </div>
+
 
                 <div class="mb-1">
                     <button class="btn accept me-4" type="submit">Aceptar</button>
