@@ -15,9 +15,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TravelController::class, 'index']); 
 Route::put('/happy_travel/{id}', [TravelController::class, 'update'])->name('travel.update');
 Route::resource('happy_travel', TravelController::class);
 Route::get('/search', [TravelController::class, 'search'])->name('travel.search');
