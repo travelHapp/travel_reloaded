@@ -27,7 +27,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-  
     public function travels()
     {
         return $this->hasMany(Travel::class);
