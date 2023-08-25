@@ -8,7 +8,9 @@
     <div class="card-body">
         <div class="icon-container desktop">
             @if(Auth::check() && $travel->user_id === Auth::user()->id)
-            <img class="icon-edit" src="{{ asset('assets/Edit-icon.svg') }}" alt="icono editar">
+            <a href="{{ route('happy_travel.edit', ['happy_travel' => $travel->id]) }}" class="card-link">
+                <img class="icon-edit" src="{{ asset('assets/Edit-icon.svg') }}" alt="icono editar">
+            </a>
             <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
                 <img class="icon-delete" src="{{ asset('assets/Delete-icon.svg') }}" alt="icono borrar">
             </a>
@@ -18,4 +20,5 @@
         <p class="card-text">{{ $travel->location }}</p>
     </div>
 </div>
+
 
