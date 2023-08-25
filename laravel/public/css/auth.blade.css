@@ -110,4 +110,8 @@
         flex-direction: column;
     }
 
+    .col-md-4{
+        padding: 0px;
+    }
+
 }
