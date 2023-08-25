@@ -3,8 +3,8 @@
     padding: 20px;
     border-radius: 20px;
     margin: auto;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     width: 60%;
     color: var(--font-color);
 }
@@ -22,7 +22,7 @@ h2{
     padding-bottom: 10px;
     color: var(--pink-button);   
     font-size:25px;
-    border-bottom:2px var(--pink-button);
+    border-bottom:2px solid var(--pink-button);
 }
 
 .form_create{
@@ -84,7 +84,7 @@ h2{
 
 .btn{
     margin-top: 35px;
-    width: 110px;
+    width: 120px;
     border-radius: 40px;
     height: 38px;
 }
@@ -94,13 +94,14 @@ h2{
     display: flex;
     align-items: center;
     background-color: var(--font-color);
-    border-radius: 80px;
+    border-radius: 100px;
 }
 
 .add_file .input-group .input-group-text {
     cursor: pointer;
     background-color: var(--font-color);
     margin-right: 5px;
+    border-radius: 100px;
     border: none;
 }
 
@@ -163,9 +164,8 @@ h2{
     }
 
     .mb-1 {
-        width: 50%; 
+        width: 50%;
         margin-top: -100px;
-        margin-left: 20px;
     }
 
     
