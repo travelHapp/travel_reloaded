@@ -1,5 +1,6 @@
-# Happy Travel
+# Transformando Sueños en Realidad: Happy Travel 
 <div align="center">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRau13DSahkZKYSvDdVdIHsY5ILYaXyD7o6E5Qm9169Q&s" width="100px">
    <img src="./laravel/public/assets/Logo.svg" width="180px">
 </div>
 
