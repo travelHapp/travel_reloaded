@@ -39,7 +39,7 @@ class TravelController extends Controller
         $request->validate([
             'name' => 'required',
             'location' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Agrega validación para la imagen
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'description' => 'required'
         ]); 
     
@@ -90,18 +90,36 @@ public function edit($id)
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
-    {
-        $travel = Travel::findOrFail($id);
+public function update(Request $request, $id)
+{
+    $travel = Travel::findOrFail($id);
 
-        $travel->update([
-            'name' => $request->input('name'),
-            'location' => $request->input('location'),
-            'description' => $request->input('description'),
+    if ($request->hasFile('image')) {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        return redirect()->route('happy_travel.show', ['happy_travel' => $travel]);
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
+        $imagePath = 'images/' . $imageName;
+
+        if ($travel->image) {
+            Storage::delete($travel->image);
+        }
+
+        $travel->image = $imagePath;
     }
+
+    $travel->update([
+        'name' => $request->input('name'),
+        'location' => $request->input('location'),
+        'description' => $request->input('description'),
+    ]);
+
+    return redirect()->route('happy_travel.show', ['happy_travel' => $travel]);
+}
+
 
     /**
      * Remove the specified resource from storage.
