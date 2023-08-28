@@ -1,0 +1,117 @@
+.btn{
+    border-radius: 1.25rem;
+    color:var(--background-color);
+    border: none;
+    width: 7.5rem;
+    height: 2.5rem;
+}
+
+.form-auth{
+    background-color:var(--background-color)!important;
+    border:none !important;
+    box-shadow: var(--box-shadow)!important; 
+    border-radius: 1.25rem; 
+    width: 18.45rem;
+    height: 2.5rem;
+}
+
+.form-auth::placeholder {
+    color:var(--font-color);
+    padding: 0.5rem;
+}
+
+.btn-primary{
+    background-color:var(--green-button); 
+}
+
+.card-login {
+    background-color: var(--bg-card); 
+    border: 4px solid var(--background-color); 
+    border-radius: 1.25rem; 
+    width: 24rem;
+    height: 22.5rem;
+}
+
+.card-register {
+    background-color: var(--bg-card); 
+    border: 4px solid var(--background-color); 
+    border-radius: 1.25rem; 
+    width: 23.2rem;
+    height: 32rem;
+}
+
+.card-body{
+    padding: 2rem;
+}
+
+.card-header{
+    padding-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 2px solid var(--pink-button);
+    color: var(--pink-button);
+    font-weight: bold;
+}
+
+.btn-secondary{
+    background: var(--pink-button);
+}
+
+.inline-p {
+    margin-top: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-form {
+    min-height: 70vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    min-height: 70vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-btn{
+    gap: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-label{
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .card-register {
+        width: 21rem;
+        height: 31rem;
+    }
+    .form-auth{
+        width: 16rem;
+        height: 2.5rem;
+    }
+    .card-login {
+        width: 21rem;
+        height: 22.5rem;
+    }
+
+    .form-group{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col-md-4{
+        padding: 0px;
+    }
+
+}
