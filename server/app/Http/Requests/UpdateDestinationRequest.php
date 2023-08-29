@@ -21,13 +21,12 @@ class UpdateDestinationRequest extends FormRequest
      */
     public function rules(): array
     {
-        $travelId = $this->route('travel');
         return [
-            'name' => 'required|unique:travel,name,'. $travelId,
+            'name' => 'required',
             'location' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description' => 'required',
-            
+            'description' => 'required'
+   
         ];
     }
 }

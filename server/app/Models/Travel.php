@@ -11,7 +11,7 @@ class Travel extends Model
 
     protected $table = 'destinations';
 
-    protected $fillable = ['name', 'location', 'image', 'description','privacy'];
+    protected $fillable = ['name', 'location', 'image', 'description'];
 
     protected $hidden = ['created_at', 'updated_at'];
 
