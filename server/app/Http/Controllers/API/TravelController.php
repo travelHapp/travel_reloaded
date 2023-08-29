@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveDestinationRequest;
+use App\Http\Requests\UpdateDestinationRequest;
 use App\Models\Travel;
 
 class TravelController extends Controller
@@ -26,23 +27,30 @@ class TravelController extends Controller
         return response()->json([
             'res'=> true,
             'msg'=> 'Destino guardado correctamente'
-        ]);
+        ],200);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Travel $travel)
     {
-        //
+        return response()->json([
+             'res'=> true,
+             'travel'=> $travel
+        ],200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateDestinationRequest $request, Travel $travel)
     {
-        //
+        $travel->update($request->all());
+        return response()->json([
+            'res'=> true,
+            'msg'=> 'Destino actualizado correctamente'
+        ],200);
     }
 
     /**
