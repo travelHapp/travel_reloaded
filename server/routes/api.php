@@ -22,3 +22,4 @@ Route::get('/', [TravelController::class, 'index']);
 Route::post('/', [TravelController::class, 'store']);
 Route::get('/{travel}', [TravelController::class, 'show']);
 Route::put('edit/{travel}', [TravelController::class, 'update']);
+Route::delete('/{travel}', [TravelController::class, 'destroy']);

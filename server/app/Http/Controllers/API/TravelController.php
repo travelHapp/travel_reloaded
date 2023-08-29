@@ -92,8 +92,20 @@ class TravelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy($id)
+{
+    $travel = Travel::findOrFail($id);
+
+    if ($travel->image) {
+        Storage::delete('public/' . $travel->image);
     }
+
+    $travel->delete();
+
+    return response()->json([
+        'res' => true,
+        'msg' => 'Destino eliminado correctamente'
+    ], 200);
+}
+
 }
