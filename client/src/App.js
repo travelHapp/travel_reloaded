@@ -12,10 +12,8 @@ function App() {
   };
   
   return (
-    <div className="App">
-     <CrearDestino/>
-    </div>
-    <div className='App'>
+   <div className="App">
+   <CrearDestino/>
    <ButtonReusable text= "Aceptar" id={1} onClick={onClick1} nameClass= "btn-aceptar"/>
    <ButtonReusable text= "Cancelar" id={2} onClick={onClick2} nameClass= "btn-cancelar"/>
    
