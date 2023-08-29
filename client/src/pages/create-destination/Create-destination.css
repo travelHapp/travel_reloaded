@@ -35,7 +35,7 @@
 .form_create .form-label{
     font-weight:700;
     margin: auto;
-    margin-bottom: 0%;
+    margin-bottom: 2%;
 }
 
 .form-control{
@@ -62,7 +62,7 @@ input.input, input.inputimg{
 }
 
 input.inputimg::placeholder{
-    padding-left: 50px;
+    padding-left: 55px;
 }
 
 .shadow-top {
@@ -74,6 +74,10 @@ input.inputimg::placeholder{
     height: 350px;
     background-color: var(--background-color);
     border: none;
+}
+
+label.form-label{
+    margin: 2rem;
 }
 
 .input::placeholder,.inputimg::placeholder,
