@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveDestinationRequest;
 use App\Models\Travel;
+use Illuminate\Support\Facades\Storage;
 
 class TravelController extends Controller
 {
@@ -50,10 +51,21 @@ class TravelController extends Controller
 
     // Procesar la imagen si se envía
     if ($request->hasFile('image')) {
+
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
         $image->move(storage_path('app/public'), $imageName);
         $travel->image = $imageName;
+
+        if ($travel->image) {
+            Storage::delete($travel->image);
+        }
+
+        $travel->image = $imagePath;
     }
 
     // Actualizar campos si se proporcionan en la solicitud
