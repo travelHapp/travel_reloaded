@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Jaldi&display=swap');
 :root{
   --font-color: #0079FF;
   --green-button: #00DFA2;
@@ -9,12 +9,3 @@
   --bg-card: rgb(255, 255, 255);
 }
 
-body {
-  font-family: 'Jaldi', sans-serif;
-}
-
-.container-fluid {
-  width: 100%;
-  height: auto;
-  margin-bottom: 100px;
-}
