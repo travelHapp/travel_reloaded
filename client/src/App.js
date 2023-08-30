@@ -1,8 +1,5 @@
-
 import './App.css';
-// import CrearDestino from './pages/create-destination/Create-destination';
-// import ButtonReusable from './components/buttonReusable/ButtonReusable';
-// import EditarDestino from './pages/edit-destination/Edit-destination';
+import Nav from './components/nav/Nav';
 
 function App() {
   // const onClick1 = () => {
@@ -13,9 +10,9 @@ function App() {
   // };
   
   return (
-   <div className="App">
-   
-   </div> 
+    <div className="App">
+   <Nav/>
+    </div>
   );
 }
 
