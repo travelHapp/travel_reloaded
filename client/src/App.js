@@ -1,5 +1,6 @@
 import './App.css';
 import Router from './application/Router';
+import LoginForm from './components/login-form/Login-form';
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   
   return (
    <div className="App">
-    <Router />
+  <Router/>
+  <LoginForm/>  
    </div> 
   );
 }
