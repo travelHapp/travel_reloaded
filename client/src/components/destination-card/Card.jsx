@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import InfoIcon from '../../assets/images/Info-icon.svg';
 import EditIcon from '../../assets/images/Edit-icon.svg';
 import DeleteIcon from '../../assets/images/Delete-icon.svg';
-
-const Card = ({ travel, isAuthenticated, userId }) => {
+import './Card.css';
+const DestinationCard = ({ travel, isAuthenticated, userId }) => {
+    const mainImageUrl = 'https://cdn.pixabay.com/photo/2023/08/19/05/31/green-sea-turtle-8199770_1280.jpg';
   return (
     <div className="card" style={{ width: '17rem' }}>
       {isAuthenticated && (
@@ -12,7 +13,7 @@ const Card = ({ travel, isAuthenticated, userId }) => {
           <img className="icon-info" src={InfoIcon} alt="icono info" />
         </Link>
       )}
-      <img className="card-img-top" src={travel.image} alt="Card image cap" />
+      <img className="card-img-top" src={mainImageUrl} alt="Card image cap" />
       <div className="card-body">
         <div className="icon-container desktop">
           {isAuthenticated && travel.user_id === userId && (
@@ -26,11 +27,9 @@ const Card = ({ travel, isAuthenticated, userId }) => {
             </a>
           )}
         </div>
-        <h5 className="card-title">{travel.name}</h5>
-        <p className="card-text">{travel.location}</p>
+        <h5 className="card-title"></h5>
+        <p className="card-text"></p>
       </div>
     </div>
   );
 };
-
-export default Card;
