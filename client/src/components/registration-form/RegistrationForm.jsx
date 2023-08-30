@@ -3,7 +3,7 @@ import axios from 'axios';
 import './RegistrationForm.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const RegistrationForm = () => {
+const Registration = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -95,4 +95,4 @@ const RegistrationForm = () => {
     );
 };
 
-export default RegistrationForm;
+export default Registration;
