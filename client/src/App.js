@@ -1,6 +1,9 @@
 import './App.css';
-import Router from './application/Router';
-import Nav from './components/nav/Nav';
+import RegistrationForm from './components/registration-form/RegistrationForm';
+// import CrearDestino from './pages/create-destination/Create-destination';
+// import ButtonReusable from './components/buttonReusable/ButtonReusable';
+// import EditarDestino from './pages/edit-destination/Edit-destination';
+
 
 function App() {
   // const onClick1 = () => {
@@ -12,7 +15,8 @@ function App() {
   
   return (
    <div className="App">
-   
+   <h1>Hola</h1>
+   <RegistrationForm/>
    </div> 
   );
 }
