@@ -1,23 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import CreateDestination from './pages/CreateDestination';
-import EditDestination from './pages/EditDestination';
-import DestinationDetail from './pages/DestinationDetail';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '../pages/home/Home';
+// import Register from './pages/Register';
+// import Login from './pages/Login';
+// import CreateDestination from './pages/CreateDestination';
+// import EditDestination from './pages/EditDestination';
+// import DestinationDetail from './pages/DestinationDetail';
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/create-destination" component={CreateDestination} />
-        <Route path="/edit-destination/:id" component={EditDestination} />
-        <Route path="/destination/:id" component={DestinationDetail} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        {/* <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/create-destination" element={<CreateDestination/>} />
+        <Route path="/edit-destination/:id" element={<EditDestination/>} />
+        <Route path="/destination/:id" element={<DestinationDetail/>} /> */}
+      
+      </Routes>
     </BrowserRouter>
   );
 };

@@ -30,19 +30,19 @@ const Nav = () => {
               </form>
             </div>
             <div className="navbar-icons">
-              <a href="/register-user" className="nav-link">
+              <a href="/register" className="nav-link">
                 <img className="icon-nav" src={Avatar} alt="icono perfil" />
               </a>
-              <a href="/happy_travel/create" className="nav-link">
+              <a href="/create-destination" className="nav-link">
                 <img
                   className="icon-nav" src={create} alt="icono de agregar destino"/>
               </a>
-              <a href="/signout" className="nav-link">
+              <a href="/logout" className="nav-link">
                 <img
                   className="icon-nav" src={Logout} alt="icono de cerrar sesión"
                 />
               </a>
-              <a href="/happy_travel/index" className="nav-link">
+              <a href="/" className="nav-link">
                 <img
                   className="icon-nav" src={home} alt="icono home"
                 />

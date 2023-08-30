@@ -1,6 +1,6 @@
 import './App.css';
 import Router from './application/Router';
-import Nav from './components/nav/Nav';
+
 
 function App() {
   // const onClick1 = () => {
@@ -12,7 +12,7 @@ function App() {
   
   return (
    <div className="App">
-   
+    <Router />
    </div> 
   );
 }
