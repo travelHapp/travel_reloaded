@@ -1,5 +1,6 @@
 
 import './App.css';
+import Router from './application/Router';
 // import CrearDestino from './pages/create-destination/Create-destination';
 // import ButtonReusable from './components/buttonReusable/ButtonReusable';
 // import EditarDestino from './pages/edit-destination/Edit-destination';
@@ -14,7 +15,7 @@ function App() {
   
   return (
    <div className="App">
-   
+     <Router />
    </div> 
   );
 }
