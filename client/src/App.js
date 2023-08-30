@@ -1,8 +1,6 @@
-
 import './App.css';
-// import CrearDestino from './pages/create-destination/Create-destination';
-// import ButtonReusable from './components/buttonReusable/ButtonReusable';
-// import EditarDestino from './pages/edit-destination/Edit-destination';
+import Router from './application/Router';
+import Nav from './components/nav/Nav';
 
 function App() {
   // const onClick1 = () => {
