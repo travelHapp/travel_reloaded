@@ -8,7 +8,7 @@ class CrearDestino extends Component {
         super(props);
 
         this.state = {
-            errors: [], // Aquí almacenaremos los errores
+            errors: [],
             name: '',
             location: '',
             image: null,
@@ -19,10 +19,10 @@ class CrearDestino extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Obtén los datos del estado
+        
         const { name, location, image, description } = this.state;
 
-        // Crea un FormData para enviar los datos del formulario
+        
         const formData = new FormData();
         formData.append('name', name);
         formData.append('location', location);
@@ -33,17 +33,14 @@ class CrearDestino extends Component {
             const response = await fetch('/happy_travel.store', {
                 method: 'POST',
                 body: formData,
-                // Puedes configurar las cabeceras según tu API
             });
 
             if (!response.ok) {
-                // Si la respuesta no es exitosa, maneja el error
-                const responseData = await response.json(); // Puedes ajustar esto según el formato de respuesta de tu API
+                const responseData = await response.json();
                 if (responseData.errors) {
                     this.setState({ errors: responseData.errors });
                 }
             } else {
-                // El formulario se envió exitosamente
                 // Puedes redirigir a otra página o tomar otras acciones
                 console.log('Formulario enviado exitosamente');
             }
@@ -118,9 +115,9 @@ class CrearDestino extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mb-1">
-                                <button className="btn accept me-2 rounded-pill custom-accept" type="submit" >Aceptar</button>
-                                <a href="/happy_travel.store" className="btn btn-danger rounded-pill">Cancelar</a>
+                            <div className="mb-1 form-buttons">
+                                <button className="btn me-2 rounded-pill accept-button" type="submit" >Aceptar</button>
+                                <a href="/" className="btn btn-danger rounded-pill cancel-button">Cancelar</a>
                             </div>
                         </form>
                     </div>

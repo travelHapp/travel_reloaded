@@ -86,21 +86,22 @@ label.form-label{
     font-size: 14px;
 }
 
-button.accept.custom-accept{
-    color:var(--bg-card);
-    background:#00DFA2;
+.accept-button{
+    color:var(--bg-card) !important;
+    background-color: var(--green-button) !important;
 }
 
-.cancel {
-    background-color: var(--pink-button);
-    border: none;
+.cancel-button {
+    background-color: var(--pink-button) !important;
+    border: none !important;
+    color:var(--bg-card) !important;
 }
 
-.accept:hover{
-    background: var(--accept-hover); 
+.accept-button:hover{
+    background-color: var(--font-color) !important; 
 }
-.cancel:hover{
-    background-color: var(--font-color);
+.cancel-button:hover{
+    background-color: var(--font-color) !important;
 }
 
 .btn{
