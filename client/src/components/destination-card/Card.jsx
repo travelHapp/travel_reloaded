@@ -3,6 +3,7 @@ import './Card.css'
 import PropTypes from 'prop-types'
 
 const Card = props => {
+  const mainImageUrl = 'https://cdn.pixabay.com/photo/2023/08/19/05/31/green-sea-turtle-8199770_1280.jpg';
   return (
     <div className="card" style={{ width: '17rem' }}>
       <a href={props.showTravelUrl} className="card-link">
