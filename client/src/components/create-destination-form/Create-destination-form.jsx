@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../create-destination/Create-destination.css';
+import './Create-destination-form.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import fileIcon from '../../assets/images/File-icon.svg';
 
-class EditarDestino extends Component {
+class CrearDestino extends Component {
     constructor(props) {
         super(props);
 
@@ -31,24 +31,24 @@ class EditarDestino extends Component {
 
         try {
             const response = await fetch('/happy_travel.store', {
-                method: 'PUT', 
+                method: 'POST',
                 body: formData,
                 // Puedes configurar las cabeceras según tu API
             });
 
             if (!response.ok) {
                 // Si la respuesta no es exitosa, maneja el error
-                const responseData = await response.json(); // Ajusta según el formato de respuesta de tu API
+                const responseData = await response.json(); // Puedes ajustar esto según el formato de respuesta de tu API
                 if (responseData.errors) {
                     this.setState({ errors: responseData.errors });
                 }
             } else {
-               
+                // El formulario se envió exitosamente
                 // Puedes redirigir a otra página o tomar otras acciones
-                console.log('Formulario actualizado exitosamente');
+                console.log('Formulario enviado exitosamente');
             }
         } catch (error) {
-            console.error('Error al actualizar el formulario:', error);
+            console.error('Error al enviar el formulario:', error);
         }
     }
 
@@ -65,10 +65,10 @@ class EditarDestino extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="form-container p-4 rounded-4">
+            <div className="form-container">
                 <div>
                     <div>
-                        <h2 className='Title'>Editar destino</h2>
+                        <h2 className='Title'>Crear destino</h2>
 
                         {errors.length > 0 && (
                             <div className="alert alert-danger mt-2">
@@ -90,7 +90,7 @@ class EditarDestino extends Component {
                                 <div className="columna1 col-md-6">
                                     <div className="mb-4">
                                         <label htmlFor="validationTooltip01" className="form-label">Título</label>
-                                        <input type="text" name="name" className="shadow-top rounded-pill input" id="validationTooltip01" placeholder="Indica el nombre del destino" />
+                                        <input type="text" name="name" className="shadow-top rounded rounded-pill input" id="validationTooltip01" placeholder="Indica el nombre del destino" />
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="validationTooltip01" className="form-label">Ubicación</label>
@@ -104,7 +104,7 @@ class EditarDestino extends Component {
                                                 <input type="file" name="image" id="fileInput" className="d-none input" accept="image/*" />
                                                 <img className="img_add" src={fileIcon} alt="Icono de carpeta" width="30" height="30" />
                                             </label>
-                                            <input type="text" className="shadow-top rounded-pill inputimg" placeholder="Sube una imagen..." readOnly></input>
+                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readonly></input>
                                         </div>
                                         <div className="invalid-feedback">Ejemplo de retroalimentación de archivo no válido</div>
                                     </div>
@@ -114,7 +114,7 @@ class EditarDestino extends Component {
                                 <div className="columna2 col-md-6">
                                     <div className="mb-3 row">
                                         <label htmlFor="validationTextarea" className="form-label">¿Por qué quieres viajar allí?</label>
-                                        <textarea className="shadow-top p-4 rounded-4 custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino"></textarea>
+                                        <textarea className=" shadow-top p-4 rounded-4 custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -126,9 +126,9 @@ class EditarDestino extends Component {
                     </div>
                 </div>
             </div>
-
+        
         );
     }
 }
 
-export default EditarDestino;
+export default CrearDestino;

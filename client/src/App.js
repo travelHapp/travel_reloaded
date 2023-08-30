@@ -1,4 +1,5 @@
 import './App.css';
+import Router from './application/Router';
 import Nav from './components/nav/Nav';
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
   // };
   
   return (
-    <div className="App">
-   <Nav/>
-    </div>
+   <div className="App">
+   
+   </div> 
   );
 }
 
