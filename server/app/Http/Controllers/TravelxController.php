@@ -150,15 +150,10 @@ public function update(Request $request, $id)
      }
  
     
-    public function search(Request $request)
-    {
-    $searchTerm = $request->input('search');
-
-    $travels = Travel::where('name', 'like', '%' . $searchTerm . '%')
-                      ->orWhere('location', 'like', '%' . $searchTerm . '%')
-                      ->get();
-
-    return view('index', compact('travels'));
+   public function search(Request $request)
+{
+   $travel = Travel::search($request->search);
+    
+    return view('index', compact('travel'));
 }
-
 }

@@ -5,68 +5,48 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\LoginRequest;
+
 class AuthController extends Controller
 {
-    public function index()
-    {
-        return view('auth.login');
-    }  
-      
-    public function customLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+    public function register(RegisterRequest $request) {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return response()->json([
+            'res' => true,
+            'msg' => 'Usuario registrado correctamente',
         ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('happy_travel')
-                        ->withSuccess('Inicio de sesión exitoso');
-        }
-  
-        return redirect("auth.login")->withSuccess('Los detalles de inicio de sesión no son válidos');
 
-       
     }
-
-    public function register()
-    {
-        return view('auth.register');
-    }
-      
-    public function customRegister(Request $request)
-    {  
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-           
-        $data = $request->all();
-        $user = $this->create($data);
-
-        if ($user) {
-            Auth::login($user);
-            return redirect()->route('happy_travel.index')->withSuccess('Te has registrado exitosamente');
-        } else {
-            return redirect()->route('register')->with('error', 'Hubo un problema al registrarte');
-        }
-    }
-         
-        
-
-    public function create(array $data)
-    {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
-    }    
     
-    public function signOut() {
-        Auth::logout();
-        return redirect()->route('happy_travel.index');
+    public function login(LoginRequest $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if (! $user|| ! Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'msg' => ['Las credenciales soon incorrectas'],
+            ]);
+        } 
+
+        $token = $user->createToken($request->email)->plainTextToken;
+
+        return response()->json([
+            'res' => true,
+            'token' => $token
+        ],200);
     }
+        
+    public function logout(Request $request) {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'res' => true,
+            'msg' => "Token eliminado correctamente"
+        ],200);
+     }
 }
