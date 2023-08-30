@@ -4,17 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import fileIcon from '../../assets/images/File-icon.svg';
 
 class CrearDestino extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {
-            errors: [], // Aquí almacenaremos los errores
-            name: '',
-            location: '',
-            image: null,
-            description: '',
-        };
-    }
+    //     this.state = {
+    //         errors: [], // Aquí almacenaremos los errores
+    //         name: '',
+    //         location: '',
+    //         image: null,
+    //         description: '',
+    //     };
+    // }
 
     handleSubmit = async (event) => {
         event.preventDefault();
