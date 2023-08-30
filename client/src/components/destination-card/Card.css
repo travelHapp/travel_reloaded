@@ -38,9 +38,13 @@
 .card-link {
     text-decoration: none;
   }
+
   .icon-edit, .icon-delete{
     padding: 0px 10px 15px;
+    
   }
+  
+
   .icon-info{
     width: 40px;
     position: absolute;

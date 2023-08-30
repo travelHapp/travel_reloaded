@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../../components/destination-card/Card';
-
 import Nav from '../../components/nav/Nav';
+import DestinationCard from '../../components/destination-card/Card';
 const Home = () => {
   const [travels, setTravels] = useState([]);
 
@@ -19,20 +18,7 @@ const Home = () => {
   return (
     <>
         <Nav/>
-        <div className="row">
-        {travels.map(travel => (
-            <div key={travel.id} className="col-md-3 col-sm-6">
-            <div className="mx-auto">
-                {/* Reemplaza "Card" con el componente de tarjeta que quieras usar */}
-                <Card
-                travel={travel}
-                // isAuthenticated=
-                // userId= 
-                />
-            </div>
-            </div>
-        ))}
-        </div>
+        <DestinationCard/>
     </>
   );
 };
