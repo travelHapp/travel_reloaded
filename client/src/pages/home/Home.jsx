@@ -1,28 +1,14 @@
-// import React, { useState, useEffect } from 'react';
-// import Nav from '../../components/nav/Nav';
-// import DestinationCard from '../../components/destination-card/Card';
-// const Home = () => {
-
-//   return (
-//     <>
-//         <Nav/>
-//         <DestinationCard/>
-//     </>
-//   );
-// };
-
-// export default Home;
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
-import { fetchDestinations } from '../../service/service';
+import apiService from '../../service/service'; // Asegúrate de que la ruta sea correcta
 
 const Home = () => {
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchDestinations()
+    apiService.fetchData()
       .then(data => {
         setDestinations(data);
         setIsLoading(false);
@@ -44,8 +30,7 @@ const Home = () => {
             <DestinationCard
               key={destination.id}
               travel={destination}
-              isAuthenticated={false}  // Aquí puedes pasar el valor correcto
-              userId={null}             // Aquí puedes pasar el valor correcto
+              isAuthenticated={false} // Aquí puedes pasar el valor correcto
             />
           ))}
         </div>
@@ -55,5 +40,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
