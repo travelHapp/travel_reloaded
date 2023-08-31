@@ -13,7 +13,7 @@ const DestinationCard = ({ travel, isAuthenticated, userId }) => {
           <img className="icon-info" src={InfoIcon} alt="icono info" />
         </Link>
       
-      <img className="card-img-top" src={mainImageUrl} alt="Card image cap" />
+      <img className="card-img-top" src='https://www.iagua.es/sites/default/files/images/Ca%C3%B1o_Cristales%2C_Meta_3(1).jpg' alt="Card image cap" />
       <div className="card-body">
         <div className="card-text">
           <h5 className="card-title-card">Título Destino</h5>
@@ -31,3 +31,5 @@ const DestinationCard = ({ travel, isAuthenticated, userId }) => {
     </div>
   );
 };
+
+export default DestinationCard;
