@@ -14,9 +14,15 @@ const Registration = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/api/register', formData);
+            const response = await axios.post('http://127.0.0.1:8000/api/register', formData, {
+                headers: {
+                    'Content-Type': 'application/json', // Agrega esta línea
+                },
+            }
+            );
             console.log(response.data); // Handle success response
-        } catch (error) {
+        } 
+        catch (error) {
             console.error(error); // Handle error response
         }
     };
