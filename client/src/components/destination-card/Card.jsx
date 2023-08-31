@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
 const DestinationCard = ({ travel, isAuthenticated }) => {
+  const imageUrl = `http://127.0.0.1:8000${travel.image}`;
+
+
   return (
     <div className="card" style={{ width: '17rem' }}>
       {isAuthenticated && (
@@ -14,7 +17,7 @@ const DestinationCard = ({ travel, isAuthenticated }) => {
           <img className="icon-info" src={InfoIcon} alt="icono info" />
         </Link>
       )}
-      <img className="card-img-top" src={travel.image} alt="Card image cap" />
+      <img className="card-img-top" src={imageUrl} alt="Card image cap" />
       <div className="card-body">
         <div className="icon-container desktop">
           {isAuthenticated && (

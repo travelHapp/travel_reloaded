@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
-import apiService from '../../service/service'; // Asegúrate de que la ruta sea correcta
+import apiService from '../../service/service';
 
 const Home = () => {
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const imageUrl = 'http://127.0.0.1:8000/api';
 
   useEffect(() => {
     apiService.fetchData()
@@ -26,11 +27,12 @@ const Home = () => {
         <p>Cargando destinos...</p>
       ) : (
         <div className="destination-card-list">
-          {destinations.map(destination => (
+          {destinations.map(travel => (
             <DestinationCard
-              key={destination.id}
-              travel={destination}
-              isAuthenticated={false} // Aquí puedes pasar el valor correcto
+              key={travel.id}
+              travel={travel}
+              imageUrl={imageUrl}
+              isAuthenticated={false}
             />
           ))}
         </div>
