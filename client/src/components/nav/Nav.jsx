@@ -58,7 +58,7 @@ const Nav = () => {
           </div>
          
           </div>
-          <div class="blue-line"></div>
+          <div className="blue-line"></div>
         </>
       );
     }

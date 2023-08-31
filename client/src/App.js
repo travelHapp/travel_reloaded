@@ -1,6 +1,6 @@
 import './App.css';
-import Router from './application/Router';
-import LoginForm from './components/login-form/Login-form';
+import MyPage from './components/TravelDetails/MyPage';
+import TravelDetails from './components/TravelDetails/MyPage';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   
   return (
    <div className="App">
-  <Router/>
+  <TravelDetails/>
   
    </div> 
   );
