@@ -15,17 +15,24 @@ const Nav = () => {
             <div className="logo-container">
               <img src={logo} alt="imagen del Logo" />
             </div>
+
+            <div className="navbar-right">
             <div className="search-input-container">
               <form id="search-form" action="/travel/search" method="GET">
-                <div className="form-control-container">
+                <div className="search-container">
                   <input
                     type="text"
                     id="search"
                     name="search"
-                    className="form-control"
+                    className="form-input-search"
                     placeholder="Search..."
                   />
-                  <img id="search-icon" className="search-icon" src= {glass} alt="icono de búsqueda"/>
+                  <img
+                    id="search-icon"
+                    className="search-icon"
+                    src={glass}
+                    alt="icono de búsqueda"
+                  />
                 </div>
               </form>
             </div>
@@ -49,8 +56,9 @@ const Nav = () => {
               </a>
             </div>
           </div>
+         
+          </div>
           <div class="blue-line"></div>
-
         </>
       );
     }

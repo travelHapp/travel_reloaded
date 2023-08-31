@@ -76,9 +76,9 @@ input.inputimg::placeholder{
     border: none;
 }
 
-label.form-label{
+/* label.form-label{
     margin: 2rem;
-}
+} */
 
 .input::placeholder,.inputimg::placeholder,
 .custom-textarea::placeholder {

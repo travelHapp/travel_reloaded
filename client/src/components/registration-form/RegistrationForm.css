@@ -3,6 +3,10 @@ body{
     font-family: 'Jaldi', sans-serif;
 }
 
+
+.signup-form{
+    margin-top: 5rem;
+}
 div{
     width: 100%;
 }
