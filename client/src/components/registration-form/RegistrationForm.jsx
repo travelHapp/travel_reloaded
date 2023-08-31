@@ -82,9 +82,9 @@ const Registration = () => {
                                     </div>
                                     <div className="form-buttons">
                                         <button type="submit" className="accept-button">Aceptar</button>
-                                        <a href="#" className="cancel-button">Cancelar</a>
+                                        <a href="/" className="cancel-button">Cancelar</a>
                                     </div>
-                                    <div className="login-acces"><p className='form-question'>¿Ya tienes una cuenta? Accede</p><a className="acces" href=""> Aquí</a></div>
+                                    <div className="login-acces"><p className='form-question'>¿Ya tienes una cuenta? Accede</p><a className="acces" href="/login"> Aquí</a></div>
                                 </form>
                             </div>
                         </div>

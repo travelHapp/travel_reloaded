@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import CreateDestination from '../pages/create-destination/CreateDestination';
 import RegistrationForm from '../pages/registration-form/RegistrationForm';
-// import Login from './pages/Login';
+import Login from '../pages/login/login';
 import EditDestination from '../pages/edit-destination/EditDestination';
 // import DestinationDetail from './pages/DestinationDetail';
 

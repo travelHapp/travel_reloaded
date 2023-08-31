@@ -1,7 +1,7 @@
 // LoginForm.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import './RegistrationForm.css';
+import './Login-form.css';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -26,28 +26,41 @@ function LoginForm() {
   };
 
   return (
-    <div>
-      <h3>Iniciar Sesión</h3>
+
+    <main className="signup-form">
+    <div className="form-registration">
+    <div class="form-body">
+      <h3 className='form-title'>Acceso de Usuario</h3>
+      <div class="red-line"></div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email:</label>
+          <label className='form-label'>Email:</label>
           <input
+          className='form-input'
             type="email"
             value={email}
+            placeholder='Escribe tu Email'
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
-          <label>Contraseña:</label>
+          <label className='form-label'>Contraseña:</label>
           <input
+           className='form-input'
             type="password"
             value={password}
+            placeholder='Escribe tu Contraseña'
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Iniciar Sesión</button>
+        <div className="form-buttons">
+          <button type="submit" className="accept-button">Aceptar</button>
+             <a href="/" className="cancel-button">Cancelar</a>
+         </div>
       </form>
     </div>
+    </div>
+    </main>
   );
 }
 

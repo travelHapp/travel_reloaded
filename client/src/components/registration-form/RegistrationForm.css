@@ -59,7 +59,7 @@ div{
 
 }
 .form-input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     border: 1px solid var(--blue-primary);
     border-radius: 20px;

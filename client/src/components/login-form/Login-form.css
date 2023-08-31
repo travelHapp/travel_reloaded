@@ -1,117 +1,128 @@
-/* .btn{
-    border-radius: 1.25rem;
-    color:var(--background-color);
+
+body{
+    font-family: 'Jaldi', sans-serif;
+}
+
+
+.signup-form{
+    margin-top: 5rem;
+}
+div{
+    width: 100%;
+}
+.form-body {
+    margin: 0 auto;
+    border: 4px solid var(--yellow-light, #FBFDCE);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+
+.red-line {
+    width: 100%;
+    height: 2px;
+    background-color: #FF0060;
+    margin-bottom: 2rem;
+}
+.form-title {
+    color: #FF0060;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.custom-divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--red-divider);
+    margin-bottom: 20px;
+}
+
+
+
+.form-label {
+    color: #0079FF;
+    display: block;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.input-container{
+    width: 90%;
+
+}
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--blue-primary);
+    border-radius: 20px;
+    background: var(--yellow-light, #FBFDCE);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: var(--blue-primary);
+    margin-bottom: 15px;
+    flex-grow: inherit;
+}
+
+.form-input::placeholder {
+    color: var(--blue, #0079FF);
+}
+
+.custom-invalid-feedback {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+    display: block;
+    margin-top: 5px;
+}
+
+.form-buttons {
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.accept-button {
+    background-color: #00DFA2;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 20px;
     border: none;
-    width: 7.5rem;
-    height: 2.5rem;
-}
-
-.form-auth{
-    background-color:var(--background-color)!important;
-    border:none !important;
-    box-shadow: var(--box-shadow)!important; 
-    border-radius: 1.25rem; 
-    width: 18.45rem;
-    height: 2.5rem;
-}
-
-.form-auth::placeholder {
-    color:var(--font-color);
-    padding: 0.5rem;
-}
-
-.btn-primary{
-    background-color:var(--green-button); 
-}
-
-.card-login {
-    background-color: var(--bg-card); 
-    border: 4px solid var(--background-color); 
-    border-radius: 1.25rem; 
-    width: 24rem;
-    height: 22.5rem;
-}
-
-.card-register {
-    background-color: var(--bg-card); 
-    border: 4px solid var(--background-color); 
-    border-radius: 1.25rem; 
-    width: 23.2rem;
-    height: 32rem;
-}
-
-.card-body{
-    padding: 2rem;
-}
-
-.card-header{
-    padding-bottom: 2rem;
-    padding: 1rem;
-    border-bottom: 2px solid var(--pink-button);
-    color: var(--pink-button);
+    cursor: pointer;
     font-weight: bold;
 }
 
-.btn-secondary{
-    background: var(--pink-button);
-}
-
-.inline-p {
-    margin-top: 2rem;
-    gap: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.login-form {
-    min-height: 70vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.signup-form {
-    min-height: 70vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-btn{
-    gap: 1rem;
-    padding-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-label{
-    color: var(--font-color);
+.cancel-button {
+    background-color: #FF0060;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    .card-register {
-        width: 21rem;
-        height: 31rem;
-    }
-    .form-auth{
-        width: 16rem;
-        height: 2.5rem;
-    }
-    .card-login {
-        width: 21rem;
-        height: 22.5rem;
-    }
+.login-acces{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
 
-    .form-group{
-        display: flex;
-        flex-direction: column;
-    }
+.form-question{
+font-weight: 700;
+color: #0079FF;
+}
 
-    .col-md-4{
-        padding: 0px;
-    }
-
-} */
+.acces{
+    font-weight: 700;
+color: #00DFA2;
+}
