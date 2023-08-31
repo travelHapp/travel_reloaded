@@ -28,7 +28,7 @@ class TravelController extends Controller
     if ($request->hasFile('image')) {
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image->storeAs('public/images', $imageName);
+        $image->storeAs('public/images/', $imageName);
         $data['image'] = $imageName;
 
     Travel::create($data);
@@ -39,7 +39,9 @@ class TravelController extends Controller
         'image_url' => Storage::url('public/images/' . $imageName)
     ], 200);
     }
+    
 }
+
 
     /**
      * Display the specified resource.
