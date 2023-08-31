@@ -5,7 +5,7 @@
 </div>
 
 ## Developers
- [<img src="https://avatars.githubusercontent.com/u/79811065?v=4" width=150><br><sub>Rosmery </sub>](https://github.com/genesis-nf)| [<img src="https://avatars.githubusercontent.com/u/131755081?v=4" width=115><br><sub>Florencia Bordón</sub>](https://github.com/florienborg) |  [<img src="https://avatars.githubusercontent.com/u/131244871?v=4" width=115><br><sub>Dennise </sub>](https://github.com/CindyLeiva) |  [<img src="https://avatars.githubusercontent.com/u/107352744?v=4" width=115><br><sub>Marga </sub>](https://github.com/mgblanco10) |   [<img src="https://avatars.githubusercontent.com/u/79811065?v=4" width=150><br><sub>Lorena </sub>](https://github.com/genesis-nf)| [<img src="https://avatars.githubusercontent.com/u/131755081?v=4" width=115><br><sub>Jeaneth Sanchez</sub>](https://github.com/florienborg) 
+ [<img src="https://avatars.githubusercontent.com/u/79811065?v=4" width=150><br><sub>Rosmery </sub>](https://github.com/genesis-nf)| [<img src="https://avatars.githubusercontent.com/u/131755081?v=4" width=115><br><sub>Florencia Bordón</sub>](https://github.com/florienborg) |  [<img src="https://avatars.githubusercontent.com/u/129850727?v=4?v=4" width=115><br><sub>Dennise Khurlopian </sub>](https://github.com/dkhurlop) |  [<img src="https://avatars.githubusercontent.com/u/107352744?v=4" width=115><br><sub>Marga </sub>](https://github.com/mgblanco10) |   [<img src="https://avatars.githubusercontent.com/u/79811065?v=4" width=150><br><sub>Lorena </sub>](https://github.com/genesis-nf)| [<img src="https://avatars.githubusercontent.com/u/131755081?v=4" width=115><br><sub>Jeaneth Sanchez</sub>](https://github.com/florienborg) 
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## 📓 Tabla de contenidos 
