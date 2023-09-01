@@ -23,7 +23,7 @@ const DestinationCard = ({ travel, isAuthenticated }) => {
             </Link>
           )}
           {isAuthenticated && (
-            <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
+            <a id="deleteLink" href="../modal/Modal.jsx" data-toggle="modal" data-target="#deleteModal">
               <img className="icon-delete" src={DeleteIcon} alt="icono borrar" />
             </a>
           )}

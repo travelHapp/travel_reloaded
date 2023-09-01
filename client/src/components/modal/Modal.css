@@ -1,0 +1,78 @@
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+  }
+  
+  .modal-content {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    width: 500px;
+    height: 250px; /* Ajustar la altura para dar espacio a los botones */
+    border: none;
+    box-shadow: none;
+    font-size: 25px;
+    border-radius: 20px;
+    display: flex;
+  flex-direction: column; /* Alinea el contenido en una columna */
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column; /* Alinea los elementos en una columna */
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Añade espacio entre el cuerpo y los botones */
+  }
+  
+  .cancel-button,
+  .accept-button {
+    border-radius: 30px;
+    border: none;
+    color: var(--background-color);
+    width: 120px;
+    height: 40px;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cancel-button {
+    background-color: var(--pink-button);
+  }
+  
+  .accept-button {
+    background-color: var(--green-button);
+  }
+  
+  .cancel-button:hover,
+  .accept-button:hover {
+    background-color: var(--font-color);
+    color: var(--background-color);
+  }
+
+  
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 320px;
+      height: 275px; /* Ajusta la altura en pantallas pequeñas */
+    }
+  }
+  
+  

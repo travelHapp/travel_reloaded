@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import apiService from '../../service/service';
-import './TravelDetails.css'
+import '../../components/TravelDetails/TravelDetails.css'
+import axios from 'axios';
 
 const TravelDetails = () => {
-  const [data, setData] = useState(null);
+  const [travel, setTravel] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseData = await apiService.fetchData();
-        setData(responseData);
+        const authToken = localStorage.getItem('auth_token');
+        const headers = {
+          Authorization: `Bearer ${authToken}`,
+        };
+        const response = await axios.get('http://localhost:8000/api', { headers });
+        setTravel(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error(error);
       }
     };
 
@@ -19,23 +23,21 @@ const TravelDetails = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Travel Details Page</h1>
-      {data ? (
-        <div className="travel-details-container">
-          {data.map((item) => (
-            <div key={item.id} className="travel-item">
-              <img src={item.image} alt={`Travel ${item.title}`} />
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-            </div>
-          ))}
+    <div className="container">
+      <div className="show-container">
+        <img className="show-image" src={travel.image} alt="Imagen del destino" />
+        <div className="text-container">
+          <div className="titles-container">
+            <h2 className="travel-name">{travel.id}</h2>
+            <h3 className="travel-location">{travel.title}</h3>
+          </div>
+          <p className="travel-description">{travel.description}</p>
         </div>
-      ) : (
-        <p>Loading data...</p>
-      )}
+        {/* Aquí puedes agregar el renderizado condicional para los íconos de editar y borrar */}
+      </div>
     </div>
   );
 };
+
 
 export default TravelDetails;

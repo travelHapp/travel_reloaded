@@ -1,6 +1,6 @@
 import './App.css';
-import MyPage from './components/TravelDetails/MyPage';
-import TravelDetails from './components/TravelDetails/MyPage';
+import TravelDetails from './components/TravelDetails/TravelDetails';
+import Modal from './components/modal/Modal.jsx';
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   
   return (
    <div className="App">
+  <Modal/>
   <TravelDetails/>
   
    </div> 
