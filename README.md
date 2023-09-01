@@ -60,7 +60,7 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 
 Breve descripción de como poder ver nuestro proyecto, para ejecutarlo necesitas tener conocimientos previos sobre como funciona Mamp/Xamp y tener instalado composer
 1. Clona este repositorio en tu máquina local:
-`https://github.com/florienborg/happytravel.git`
+`https://github.com/travelHapp/travel_reloaded/tree/main`
 2. Crea la base de datos y la tabla:
 - Abre tu gestor de bases de datos (por ejemplo, phpMyAdmin).
 - Crea una nueva base de datos con el nombre  "happy_travel" aquí las tablas las realizaremos desde tú editor de código.
