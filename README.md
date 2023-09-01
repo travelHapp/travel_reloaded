@@ -1,6 +1,5 @@
-# Transformando Sueños en Realidad: Happy Travel 
 <div align="center">
-
+# Transformando Sueños en Realidad: Happy Travel 
 </div>
 
 ## Developers
