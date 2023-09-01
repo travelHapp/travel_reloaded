@@ -101,7 +101,7 @@ class CrearDestino extends Component {
                                                 <input type="file" name="image" id="fileInput" className="d-none input" accept="image/*" required/>
                                                 <img className="img_add" src={fileIcon} alt="Icono de carpeta" width="30" height="30" />
                                             </label>
-                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readonly></input>
+                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readonly required></input>
                                         </div>
                                         <div className="invalid-feedback">Ejemplo de retroalimentación de archivo no válido</div>
                                     </div>
@@ -111,7 +111,7 @@ class CrearDestino extends Component {
                                 <div className="columna2 col-md-6">
                                     <div className="mb-3 row">
                                         <label htmlFor="validationTextarea" className="form-label">¿Por qué quieres viajar allí?</label>
-                                        <textarea className=" shadow-top p-4 rounded-4 custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino" required />
+                                        <textarea className=" shadow-top p-4 rounded-4 custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino" required ></textarea>
                                     </div>
                                 </div>
                             </div>
