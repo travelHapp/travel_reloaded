@@ -97,7 +97,8 @@ class TravelController extends Controller
 
     return response()->json([
         'res' => true,
-        'msg' => 'Destino actualizado correctamente'
+        'msg' => 'Destino actualizado correctamente',
+        'data' => $travel
     ], 200);
 }
 
