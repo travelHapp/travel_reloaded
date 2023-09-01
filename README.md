@@ -50,7 +50,8 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 <img src="https://w7.pngwing.com/pngs/115/721/png-transparent-trello-social-icons-icon.png" alt="trello" width="40" heigth="40"/>
 <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/>
-<img src="https://profilinator.rishav.dev/skills-assets/xampp.png" alt="react" width="40" height="40"/> 
+<img src="https://profilinator.rishav.dev/skills-assets/xampp.png" alt="xampp" width="40" height="40"/> 
+ <img src="https://www.pngall.com/wp-content/uploads/8/phpMyAdmin-PNG-Picture.png" alt="php my admin" width="60" heigth="40"/>
  </div>
 
 ## Instalación
