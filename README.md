@@ -34,6 +34,7 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
 <img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="40" />  
 <img src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="react" width="40" height="40"/>
+ <img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="javascript" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/php.svg" alt="php" width="40" height="40"/>
 <img src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="react" width="40" height="40"/>
 <img src="https://profilinator.rishav.dev/skills-assets/laravel-plain-wordmark.svg" alt="Laravel" width="40" height="40"/>
@@ -62,12 +63,15 @@ Breve descripción de como poder ver nuestro proyecto, para ejecutarlo necesitas
 y luego, el cuál hará que se carguen las tablas del proyecto
 `php artisan migrate`
 4. Para poder ver el proyecto tienes que acceder a tu terminal en la carpeta de `client` con el comando `cd + carpeta-correspondiente-donde-quieras-entrar` una vez ahí, ejecuta `npm start`
+  
 
 Y disfruta de la experiencia de ver y guardar destinos.
 
 ## Recursos
 
 Aqui te dejamos algunos videos para poder realizar el proyecto.
+
+- [Laravel using Sanctum to authenticate a React SPA ](https://laravel-news.com/using-sanctum-to-authenticate-a-react-spa)
 
 - [login y register](https://www.positronx.io/laravel-custom-authentication-login-and-registration-tutorial/)
 
