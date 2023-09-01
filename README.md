@@ -69,7 +69,8 @@ y luego, el cuál hará que se carguen las tablas del proyecto
 `php artisan migrate`.
 4. Instalar React Router 6 es ejecutar `npm install react-router-dom@6` en la terminal de tu proyecto y esperar a que se complete la instalación.
 Si estás usando yarn, emplea este comando: `yarn add react-router-dom@6`<br>
-5.  [Como instalar Bootstrap en el proyecto o con un CDN](https://raiolanetworks.es/blog/bootstrap/#como_descargar_e_instalar_bootstrap)
+5.  [Como instalar Bootstrap en el proyecto o con un CDN](https://raiolanetworks.es/blog/bootstrap/#como_descargar_e_instalar_bootstrap). Comando  `npm install bootstrap@5.3.1`
+6. [Como instalar axios](https://www.npmjs.com/package/axios). Comando `npm install axios`
 6. Para poder ver el proyecto tienes que acceder a tu terminal en la carpeta de `client` con el comando `cd + carpeta-correspondiente-donde-quieras-entrar` una vez ahí, ejecuta `npm start`
 
   
