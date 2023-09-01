@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
 import apiService from '../../service/service';
+import './Home.css';
 
 const Home = () => {
   const [destinations, setDestinations] = useState([]);
@@ -23,20 +24,22 @@ const Home = () => {
   return (
     <>
       <Nav />
-      {isLoading ? (
-        <p>Cargando destinos...</p>
-      ) : (
-        <div className="destination-card-list">
-          {destinations.map(travel => (
-            <DestinationCard
-              key={travel.id}
-              travel={travel}
-              imageUrl={imageUrl}
-              isAuthenticated={false}
-            />
-          ))}
-        </div>
-      )}
+      <div className="destination-grid">
+        {isLoading ? (
+          <p>Cargando destinos...</p>
+        ) : (
+          destinations.map(travel => (
+            <div className="destination-card">
+              <DestinationCard
+                key={travel.id}
+                travel={travel}
+                imageUrl={imageUrl}
+                isAuthenticated={false} 
+              />
+            </div>
+          ))
+        )}
+      </div>
     </>
   );
 };
