@@ -69,7 +69,7 @@ Y disfruta de la experiencia de ver y guardar destinos.
 
 ## Recursos
 
-Aqui te dejamos algunos videos para poder realizar el proyecto.
+Aqui te dejamos algunas webns o videos para poder realizar el proyecto.
 
 - [Laravel using Sanctum to authenticate a React SPA ](https://laravel-news.com/using-sanctum-to-authenticate-a-react-spa)
 
