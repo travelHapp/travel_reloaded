@@ -4,7 +4,7 @@
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 50%;
+    width: 55%;
     color: var(--font-color);
 }
 
@@ -76,10 +76,6 @@ input.inputimg::placeholder{
     border: none;
 }
 
-/* label.form-label{
-    margin: 2rem;
-} */
-
 .input::placeholder,.inputimg::placeholder,
 .custom-textarea::placeholder {
     color: var(--font-color);
@@ -88,12 +84,14 @@ input.inputimg::placeholder{
 
 button.accept.custom-accept{
     color:var(--bg-card);
-    background:#00DFA2;
+    background-color:var(--green-button);
+    font-weight: bold;
 }
 
-.cancel {
+.custom-cancel{
+    color: var(--bg-card);
     background-color: var(--pink-button);
-    border: none;
+    font-weight: bold
 }
 
 .accept:hover{

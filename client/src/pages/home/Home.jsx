@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
-import apiService from '../../service/service'; // Asegúrate de que la ruta sea correcta
+import apiService from '../../service/service';
+import './Home.css';
 
 const Home = () => {
   const [destinations, setDestinations] = useState([]);
@@ -22,19 +23,20 @@ const Home = () => {
   return (
     <>
       <Nav />
-      {isLoading ? (
-        <p>Cargando destinos...</p>
-      ) : (
-        <div className="destination-card-list">
-          {destinations.map(destination => (
-            <DestinationCard
-              key={destination.id}
-              travel={destination}
-              isAuthenticated={false} // Aquí puedes pasar el valor correcto
-            />
-          ))}
-        </div>
-      )}
+      <div className="destination-grid">
+        {isLoading ? (
+          <p>Cargando destinos...</p>
+        ) : (
+          destinations.map(destination => (
+            <div key={destination.id} className="destination-card">
+              <DestinationCard
+                travel={destination}
+                isAuthenticated={false} 
+              />
+            </div>
+          ))
+        )}
+      </div>
     </>
   );
 };
