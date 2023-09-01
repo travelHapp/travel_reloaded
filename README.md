@@ -41,7 +41,7 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 <img src="https://profilinator.rishav.dev/skills-assets/laravel-plain-wordmark.svg" alt="Laravel" width="40" height="40"/>
  <img src="https://toddsmithsalter.com/content/images/2020/12/All_c0525fe15a8bd68c9fbd762831ef9959_2000.jpg" alt="react" width="87" height="40"/>
  <img src="https://www.mailslurp.com/assets/brands/phpunit.png"  alt="php unit test" width="60" heigth="40"/>
- <img src="https://ih1.redbubble.net/image.404020083.1876/pp,504x498-pad,600x600,f8f8f8.u7.jpg"  alt="jest" width="50" heigth="40"/>
+ <img src="https://ih1.redbubble.net/image.404020083.1876/pp,504x498-pad,600x600,f8f8f8.u7.jpg"  alt="jest" width="39" heigth="40"/>
 </div>
 
 ## 🛠 Herramientas
