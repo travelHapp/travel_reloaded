@@ -1,7 +1,6 @@
 # Transformando Sueños en Realidad: Happy Travel 
 <div align="center">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRau13DSahkZKYSvDdVdIHsY5ILYaXyD7o6E5Qm9169Q&s" width="100px">
-   <img src="./laravel/public/assets/Logo.svg" width="180px">
+
 </div>
 
 ## Developers
@@ -33,11 +32,12 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 ## 🛠 Tecnologías
 <div>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
-<img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" />  
+<img src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="40" />  
 <img src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="react" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/php.svg" alt="php" width="40" height="40"/>
 <img src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="react" width="40" height="40"/>
 <img src="https://profilinator.rishav.dev/skills-assets/laravel-plain-wordmark.svg" alt="Laravel" width="40" height="40"/>
+ <img src="https://profilinator.rishav.dev/skills-assets/electron-original.svg"c alt="reactjs"  width="40" height="40"/>
 </div>
 
 ## 🛠 Herramientas
@@ -67,7 +67,7 @@ Y disfruta de la experiencia de ver y guardar destinos.
 
 ## Recursos
 
-Aqui te dejamos algunos videos para poder rralizar el proyecto.
+Aqui te dejamos algunos videos para poder realizar el proyecto.
 
 - [login y register](https://www.positronx.io/laravel-custom-authentication-login-and-registration-tutorial/)
 
