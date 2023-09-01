@@ -66,7 +66,9 @@ Breve descripción de como poder ver nuestro proyecto, para ejecutarlo necesitas
 3. Abre en tú editor de texto el proyecto y luego dentro de la carpeta laravel en la terminal debes poner
 `composer install`
 y luego, el cuál hará que se carguen las tablas del proyecto
-`php artisan migrate`
+`php artisan migrate`.
+4. Instalar React Router 6 es ejecutar `npm install react-router-dom@6` en la terminal de tu proyecto y esperar a que se complete la instalación.
+Si estás usando yarn, emplea este comando: `yarn add react-router-dom@6`.
 4. Para poder ver el proyecto tienes que acceder a tu terminal en la carpeta de `client` con el comando `cd + carpeta-correspondiente-donde-quieras-entrar` una vez ahí, ejecuta `npm start`
   
 
