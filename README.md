@@ -1,5 +1,5 @@
 <div align="center">
-# Transformando Sueños en Realidad: Happy Travel 
+<b><h1> Transformando Sueños en Realidad: Happy Travel </div></h1> </b>
 </div>
 
 ## Developers
