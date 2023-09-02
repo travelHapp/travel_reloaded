@@ -76,9 +76,9 @@ input.inputimg::placeholder{
     border: none;
 }
 
-label.form-label{
+/* label.form-label{
     margin: 2rem;
-}
+} */
 
 .input::placeholder,.inputimg::placeholder,
 .custom-textarea::placeholder {
@@ -88,12 +88,14 @@ label.form-label{
 
 button.accept.custom-accept{
     color:var(--bg-card);
-    background:#00DFA2;
+    background-color:var(--green-button);
+    font-weight: bold;
 }
 
-.cancel {
+.custom-cancel{
+    color: var(--bg-card);
     background-color: var(--pink-button);
-    border: none;
+    font-weight: bold
 }
 
 .accept:hover{

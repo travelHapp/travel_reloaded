@@ -1,6 +1,7 @@
 import './App.css';
 import Router from './application/Router';
-import Nav from './components/nav/Nav';
+import LoginForm from './components/login-form/Login-form';
+
 
 function App() {
   // const onClick1 = () => {
@@ -12,7 +13,8 @@ function App() {
   
   return (
    <div className="App">
-   
+  <Router/>
+  
    </div> 
   );
 }

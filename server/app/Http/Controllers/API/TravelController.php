@@ -22,13 +22,26 @@ class TravelController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(SaveDestinationRequest $request)
-    {
-        Travel::create($request->all());
-        return response()->json([
-            'res'=> true,
-            'msg'=> 'Destino guardado correctamente'
-        ],200);
+{
+    $data = $request->validated();
+
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->storeAs('public/images/', $imageName);
+        $data['image'] = $imageName;
+
+    Travel::create($data);
+
+    return response()->json([
+        'res' => true,
+        'msg' => 'Destino guardado correctamente',
+        'image_url' => Storage::url('public/images/' . $imageName)
+    ], 200);
     }
+    
+}
+
 
     /**
      * Display the specified resource.
@@ -84,7 +97,8 @@ class TravelController extends Controller
 
     return response()->json([
         'res' => true,
-        'msg' => 'Destino actualizado correctamente'
+        'msg' => 'Destino actualizado correctamente',
+        'data' => $travel
     ], 200);
 }
 

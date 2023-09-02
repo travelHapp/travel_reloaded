@@ -15,42 +15,50 @@ const Nav = () => {
             <div className="logo-container">
               <img src={logo} alt="imagen del Logo" />
             </div>
+
+            <div className="navbar-right">
             <div className="search-input-container">
               <form id="search-form" action="/travel/search" method="GET">
-                <div className="form-control-container">
+                <div className="search-container">
                   <input
                     type="text"
                     id="search"
                     name="search"
-                    className="form-control"
+                    className="form-input-search"
                     placeholder="Search..."
                   />
-                  <img id="search-icon" className="search-icon" src= {glass} alt="icono de búsqueda"/>
+                  <img
+                    id="search-icon"
+                    className="search-icon"
+                    src={glass}
+                    alt="icono de búsqueda"
+                  />
                 </div>
               </form>
             </div>
             <div className="navbar-icons">
-              <a href="/register-user" className="nav-link">
+              <a href="/register" className="nav-link">
                 <img className="icon-nav" src={Avatar} alt="icono perfil" />
               </a>
-              <a href="/happy_travel/create" className="nav-link">
+              <a href="/create-destination" className="nav-link">
                 <img
                   className="icon-nav" src={create} alt="icono de agregar destino"/>
               </a>
-              <a href="/signout" className="nav-link">
+              <a href="/logout" className="nav-link">
                 <img
                   className="icon-nav" src={Logout} alt="icono de cerrar sesión"
                 />
               </a>
-              <a href="/happy_travel/index" className="nav-link">
+              <a href="/" className="nav-link">
                 <img
                   className="icon-nav" src={home} alt="icono home"
                 />
               </a>
             </div>
           </div>
+         
+          </div>
           <div class="blue-line"></div>
-
         </>
       );
     }
