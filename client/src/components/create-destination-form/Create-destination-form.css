@@ -74,11 +74,8 @@ input.inputimg::placeholder{
     height: 350px;
     background-color: var(--background-color);
     border: none;
+    color: var(--font-color);
 }
-
-/* label.form-label{
-    margin: 2rem;
-} */
 
 .input::placeholder,.inputimg::placeholder,
 .custom-textarea::placeholder {

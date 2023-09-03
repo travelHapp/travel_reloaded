@@ -22,7 +22,7 @@ const apiService = {
       const headers = {
         Authorization: `Bearer ${authToken}`,
       };
-      const response = await axios.post(`${BASE_URL}`, newDestinationData, { headers });
+      const response = await axios.post(`${BASE_URL}/happy_travel.store`, newDestinationData, { headers });
       return response.data;
     } catch (error) {
       throw error;
@@ -35,7 +35,7 @@ const apiService = {
       const headers = {
         Authorization: `Bearer ${authToken}`,
       };
-      const response = await axios.get(`${BASE_URL} ${Id}`, { headers });
+      const response = await axios.get(`${BASE_URL}${Id}`, { headers });
       return response.data;
     } catch (error) {
       throw error;

@@ -29,7 +29,7 @@ class CrearDestino extends Component {
         formData.append('description', description);
 
         try {
-            const response = await fetch('/happy_travel.store', {
+            const response = await fetch('http://localhost:8000/api/travel/store', {
                 method: 'POST',
                 body: formData,
                
@@ -81,7 +81,7 @@ class CrearDestino extends Component {
 
                         <form onSubmit={this.handleSubmit} className="create-dest" encType="multipart/form-data" required>
                             
-                            <input type="hidden" name="_token" value="tu_token_csrf_aquí" />
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
                             <div className="form_create col">
                                 <div className="columna1 col-md-6">
@@ -101,7 +101,7 @@ class CrearDestino extends Component {
                                                 <input type="file" name="image" id="fileInput" className="d-none input" accept="image/*" required/>
                                                 <img className="img_add" src={fileIcon} alt="Icono de carpeta" width="30" height="30" />
                                             </label>
-                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readonly required></input>
+                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readOnly required></input>
                                         </div>
                                         <div className="invalid-feedback">Ejemplo de retroalimentación de archivo no válido</div>
                                     </div>

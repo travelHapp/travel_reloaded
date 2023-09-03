@@ -1,21 +1,13 @@
-import './App.css';
-import Router from './application/Router';
-import LoginForm from './components/login-form/Login-form';
-
+import { BrowserRouter } from "react-router-dom";
+import Router from "./application/Router";
 
 function App() {
-  // const onClick1 = () => {
-  //   console.log('click 1');
-  // };
-  // const onClick2 = () => {
-  //   console.log('click 2');
-  // };
-  
   return (
-   <div className="App">
-  <Router/>
-  
-   </div> 
+    <BrowserRouter>
+      
+        <Router />
+      
+    </BrowserRouter>
   );
 }
 
