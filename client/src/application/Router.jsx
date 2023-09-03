@@ -5,7 +5,7 @@ import CreateDestination from '../pages/create-destination/CreateDestination';
 import RegistrationForm from '../pages/registration-form/RegistrationForm';
 import Login from '../pages/login/login';
 import EditDestination from '../pages/edit-destination/EditDestination';
-// import DestinationDetail from './pages/DestinationDetail';
+import DestinationDetail from '../pages/detail-destination/DestinationDetail';
 
 const Router = () => {
   return (
@@ -18,7 +18,7 @@ const Router = () => {
         <Route path="/login" element={<Login/>} />
         
         
-        {/*<Route path="/destination/:id" element={<DestinationDetail/>} /> */}
+        <Route path="/destination/:id" element={<DestinationDetail/>} /> 
       
       </Routes>
     </BrowserRouter>
