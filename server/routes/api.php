@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\TravelController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DestinationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +28,18 @@ Route::get('/', [TravelController::class, 'index']);
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
+
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/', [TravelController::class, 'store']);
     Route::get('/{travel}', [TravelController::class, 'show']);
     Route::put('/{travel}', [TravelController::class, 'update']);
     Route::delete('/{travel}', [TravelController::class, 'destroy']);
     Route::post('logout', [AuthController::class, 'logout']);
+    Route::get('/destination/{id}', [DestinationController::class, 'show']);
+    Route::post('/register', 'AuthController@register');
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout')->middleware('auth:sanctum');
+
+
+
 });
