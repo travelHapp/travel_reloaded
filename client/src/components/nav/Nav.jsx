@@ -8,7 +8,9 @@ import Logout from '../../assets/images/Logout-icon.svg'
 import home from '../../assets/images/Home-icon.svg'
 
 
+
 const Nav = () => {
+
   return (
         <>
           <div className="navbar-content">
@@ -44,7 +46,7 @@ const Nav = () => {
                 <img
                   className="icon-nav" src={create} alt="icono de agregar destino"/>
               </a>
-              <a href="/logout" className="nav-link">
+              <a href="/" className="nav-link">
                 <img
                   className="icon-nav" src={Logout} alt="icono de cerrar sesión"
                 />
@@ -58,7 +60,7 @@ const Nav = () => {
           </div>
          
           </div>
-          <div class="blue-line"></div>
+          <div className="blue-line"></div>
         </>
       );
     }

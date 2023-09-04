@@ -10,7 +10,7 @@ const Home = () => {
   const imageUrl = 'http://127.0.0.1:8000/api';
 
   useEffect(() => {
-    apiService.fetchData()
+    apiService.getAllDestinations()
       .then(data => {
         setDestinations(data);
         setIsLoading(false);
@@ -29,9 +29,9 @@ const Home = () => {
           <p>Cargando destinos...</p>
         ) : (
           destinations.map(travel => (
-            <div className="destination-card">
+            <div className="destination-card" key={travel.id}>
               <DestinationCard
-                key={travel.id}
+                
                 travel={travel}
                 imageUrl={imageUrl}
                 isAuthenticated={false} 
