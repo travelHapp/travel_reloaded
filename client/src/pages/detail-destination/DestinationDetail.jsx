@@ -15,7 +15,7 @@ const DestinationDetail = () => {
         const headers = {
           Authorization: `Bearer ${authToken}`,
         };
-        const response = await axios.get(`http://localhost:8000/api/$travel/${id}`, { headers });
+        const response = await axios.get(`http://localhost:8000/api/${id}`, { headers });
 
         setDetails(response.data.travel);
         setIsLoading(false);
