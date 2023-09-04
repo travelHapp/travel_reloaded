@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
 import apiService from '../../service/service';
@@ -30,12 +31,14 @@ const Home = () => {
         ) : (
           destinations.map(travel => (
             <div className="destination-card" key={travel.id}>
-              <DestinationCard
-                
-                travel={travel}
-                imageUrl={imageUrl}
-                isAuthenticated={false} 
-              />
+              {/* Enlace a la página DestinationDetail */}
+              <Link to={`/destination-detail/${travel.id}`}>
+                <DestinationCard
+                  travel={travel}
+                  imageUrl={imageUrl}
+                  isAuthenticated={false} 
+                />
+              </Link>
             </div>
           ))
         )}
