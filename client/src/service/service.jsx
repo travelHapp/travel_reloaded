@@ -1,18 +1,21 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:8000/api';
+
 const apiService = {
-  fetchData: async () => {
+  getAllDestinations: async () => {
     try {
-      const authToken = localStorage.getItem('auth_token'); 
+      const authToken = localStorage.getItem('auth_token');
       const headers = {
         Authorization: `Bearer ${authToken}`,
       };
-      const response = await axios.get('http://localhost:8000/api', { headers });
+      const response = await axios.get(`${BASE_URL}`, { headers });
       return response.data;
     } catch (error) {
       throw error;
     }
   },
+  
   
   createDestination: async (newDestinationData) => {
     try {
