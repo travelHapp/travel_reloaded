@@ -6,24 +6,11 @@ import Avatar from '../../assets/images/Avatar-icon.svg'
 import create from '../../assets/images/Create-icon.svg'
 import Logout from '../../assets/images/Logout-icon.svg'
 import home from '../../assets/images/Home-icon.svg'
-import axios from 'axios';
 
 
 
 const Nav = () => {
-  const handleLogout = async (e) => {
-    e.preventDefault();
-    try {
-      
-      await axios.post('/api/logout');
-  
-      localStorage.removeItem('auth_token');
-  
-      window.location.href = '/'; 
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
   return (
         <>
           <div className="navbar-content">
@@ -59,7 +46,7 @@ const Nav = () => {
                 <img
                   className="icon-nav" src={create} alt="icono de agregar destino"/>
               </a>
-              <a href="/" onClick={handleLogout} className="nav-link">
+              <a href="/" className="nav-link">
                 <img
                   className="icon-nav" src={Logout} alt="icono de cerrar sesión"
                 />
