@@ -3,7 +3,7 @@ import axios from 'axios';
 const apiService = {
   fetchData: async () => {
     try {
-      const authToken = localStorage.getItem('auth_token'); // Obtener el token almacenado en localStorage
+      const authToken = localStorage.getItem('auth_token');
       const headers = {
         Authorization: `Bearer ${authToken}`,
       };

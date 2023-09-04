@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SaveDestinationRequest;
 use App\Models\Travel;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class TravelController extends Controller
 {
@@ -24,12 +25,14 @@ class TravelController extends Controller
     public function store(SaveDestinationRequest $request)
 {
     $data = $request->validated();
+    $user = Auth::user();
 
     if ($request->hasFile('image')) {
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
         $image->storeAs('public/images/', $imageName);
-        $data['image'] = $imageName;
+        $data['image'] = ('images/' . $imageName);
+        $data['user_id'] = $user->id;
 
     Travel::create($data);
 
