@@ -5,6 +5,7 @@ import CreateDestination from '../pages/create-destination/CreateDestination';
 import RegistrationForm from '../pages/registration-form/RegistrationForm';
 import Login from '../pages/login/login';
 import EditDestination from '../pages/edit-destination/EditDestination';
+import Logout from '../components/logout/Logout';
 // import DestinationDetail from './pages/DestinationDetail';
 
 const Router = () => {
@@ -16,7 +17,8 @@ const Router = () => {
         <Route path="/register" element={<RegistrationForm/>} />
         <Route path="/edit-destination/:id" element={<EditDestination/>} />
         <Route path="/login" element={<Login/>} />
-        
+        <Route path="/logout" element={<Logout />} />
+
         
         {/*<Route path="/destination/:id" element={<DestinationDetail/>} /> */}
       
