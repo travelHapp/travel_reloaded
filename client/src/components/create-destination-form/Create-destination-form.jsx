@@ -5,6 +5,61 @@ import fileIcon from '../../assets/images/File-icon.svg';
 
 class CrearDestino extends Component {
     
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            errors: [], 
+            name: '',
+            location: '',
+            image: null,
+            description: '',
+        };
+    }
+
+    handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const { name, location, image, description } = this.state;
+
+        
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('location', location);
+        formData.append('image', image);
+        formData.append('description', description);
+
+        try {
+            const response = await fetch('http://localhost:8000/api', {
+                method: 'POST',
+                body: formData,
+               
+            });
+
+            if (!response.ok) {
+                
+                const responseData = await response.json(); 
+                if (responseData.errors) {
+                    this.setState({ errors: responseData.errors });
+                }
+            } else {
+                
+                console.log('Formulario enviado exitosamente');
+            }
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+        }
+    }
+
+    handleInputChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+    }
+
+    handleImageChange = (event) => {
+        this.setState({ image: event.target.files[0] });
+    }
+
     render() {
         const { errors } = this.state;
 
