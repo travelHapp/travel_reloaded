@@ -8,7 +8,6 @@ import './Card.css';
 
 const DestinationCard = ({ travel, isAuthenticated }) => {
   const imageUrl = `http://127.0.0.1:8000/storage/${travel.image}`;
-  console.log(travel);
 
   return (
     <div className="card" style={{ width: '17rem' }}>
