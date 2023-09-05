@@ -32,7 +32,7 @@ const Home = () => {
           destinations.map(travel => (
             <div className="destination-card" key={travel.id}>
               {/* Enlace a la página DestinationDetail */}
-              <Link to={`/destination-detail/${travel.id}`}>
+              <Link to={`/destinationdetail/${travel.id}`}>
                 <DestinationCard
                   travel={travel}
                   imageUrl={imageUrl}

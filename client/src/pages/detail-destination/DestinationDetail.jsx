@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Delete from '../../assets/images/Delete-icon.svg';
 import Edit from '../../assets/images/Edit-icon.svg';
+import './DestinationDetail.css'
 
 const DestinationDetail = ({ match }) => {
   const [travel, setTravel] = useState({});
@@ -59,7 +60,7 @@ const DestinationDetail = ({ match }) => {
               <a href={`http://localhost:8000/travel/edit/${travel.id}`}>
                 <img className="icon-edit" src={Edit} alt="icono editar" />
               </a>
-              <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal" data-travel-id={travel.id}>
+              <a id="deleteLink" href="../../components/modal/Modal.jsx" data-toggle="modal" data-target="#deleteModal" data-travel-id={travel.id}>
                 <img className="icon-delete" src={Delete} alt="icono borrar" />
               </a>
             </>
