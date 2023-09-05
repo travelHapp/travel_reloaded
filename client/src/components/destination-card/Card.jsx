@@ -6,11 +6,8 @@ import DeleteIcon from '../../assets/images/Delete-icon.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
-const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
-  const imageUrl = `http://127.0.0.1:8000/${travel.image}`;
-
-  // ID del usuario que creó el destino
-  const destinationOwnerId = travel.user_id;
+const DestinationCard = ({ travel, isAuthenticated }) => {
+  const imageUrl = `http://127.0.0.1:8000/storage/${travel.image}`;
 
   return (
     <div className="card" style={{ width: '17rem' }}>
