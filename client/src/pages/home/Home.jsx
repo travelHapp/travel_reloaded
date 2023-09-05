@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
 import apiService from '../../service/service';
 import './Home.css';
@@ -8,6 +7,7 @@ const Home = () => {
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const imageUrl = 'http://127.0.0.1:8000/api';
+  const isAuthenticated = localStorage.getItem('auth_token') !== undefined;
 
   useEffect(() => {
     apiService.getAllDestinations()
@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <Nav />
+      
       <div className="destination-grid">
         {isLoading ? (
           <p>Cargando destinos...</p>
@@ -31,10 +31,10 @@ const Home = () => {
           destinations.map(travel => (
             <div className="destination-card" key={travel.id}>
               <DestinationCard
-                
+                authenticatedUserId={travel.user_id}
                 travel={travel}
                 imageUrl={imageUrl}
-                isAuthenticated={false} 
+                isAuthenticated={isAuthenticated} 
               />
             </div>
           ))
