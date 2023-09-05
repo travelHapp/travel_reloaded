@@ -5,6 +5,7 @@ import EditIcon from '../../assets/images/Edit-icon.svg';
 import DeleteIcon from '../../assets/images/Delete-icon.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
+import EditDestination from '../../pages/edit-destination/EditDestination';
 
 const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
   const imageUrl = `http://127.0.0.1:8000/${travel.image}`;

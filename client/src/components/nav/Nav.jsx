@@ -9,7 +9,7 @@ import home from '../../assets/images/Home-icon.svg'
 
 
 
-const Nav = () => {
+const Nav = ({isAuthenticated}) => {
 
   return (
         <>
