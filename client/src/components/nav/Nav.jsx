@@ -52,7 +52,7 @@ const Nav = () => {
               <a href="/" className="nav-link">
                 <img
                   className="icon-nav" src={home} alt="icono home"
-                />
+                />  
               </a>
             </div>
           </div>
