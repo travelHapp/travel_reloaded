@@ -1,51 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Delete from '../../assets/images/Delete-icon.svg';
-import Edit from '../../assets/images/Edit-icon.svg';
-import './DestinationDetail.css'
+import { useParams} from 'react-router-dom';
+import { fetchCardDetails } from '../../service/CardDetail';
+import '../../pages/detail-destination/DestinationDetail.css';
+import editIcon from '../../assets/images/Edit-icon.svg'
+import deleteIcon from '../../assets/images/Delete-icon.svg';
+import Modal from '../../components/modal/Modal';
+import { deleteTravel } from '../../service/ApiDeleteTravel'; 
 
-const DestinationDetail = ({ match }) => {
-  const [travel, setTravel] = useState({});
-  const [user, setUser] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+export default function DestinationDetail() {
+  const { id } = useParams();
+  const [travel, setDetails] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const travelId = match.params.id;
-        const authToken = localStorage.getItem('auth_token');
-        const headers = {
-          Authorization: `Bearer ${authToken}`,
-        };
-        const response = await axios.get(`http://localhost:8000/api/${travelId}`, {
-          headers,
-        });
-        setTravel(response.data);
-
-        // Puedes fetchear los datos del usuario si es necesario
-        const userId = response.data.user_id;
-        const userResponse = await axios.get(`http://localhost:8000/api/users/${userId}`, {
-          headers,
-        });
-        setUser(userResponse.data);
-
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+    const fetchDetails = async () => {
+      const travelDetails = await fetchCardDetails(id); 
+      setDetails(travelDetails); 
     };
 
-    fetchData();
-  }, [match.params.id]);
+    fetchDetails();
+  }, [id]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleDeleteClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+      
+  const handleDelete = async () => {
+    try {
+      console.log('Eliminando elemento con ID:', id);
+  
+      await deleteTravel(id); 
+  
+  
+    } catch (error) {
+      console.error('Error al eliminar el elemento:', error);
+    }
+  };
+
 
   return (
     <div className="container">
       <div className="show-container">
-        <img className="show-image" src={travel.image} alt="Imagen del destino" />
+        <img
+          className="show-image"
+          src={`http://127.0.0.1:8000/${travel.image}`}
+          alt="Imagen del destino"
+        />
         <div className="text-container">
           <div className="titles-container">
             <h2 className="travel-name">{travel.name}</h2>
@@ -53,22 +58,20 @@ const DestinationDetail = ({ match }) => {
           </div>
           <p className="travel-description">{travel.description}</p>
         </div>
-        <div className="icon-container">
-          {/* Renderizar los iconos de editar y eliminar basados en la autenticación del usuario */}
-          {user.id === travel.user_id && (
-            <>
-              <a href={`http://localhost:8000/travel/edit/${travel.id}`}>
-                <img className="icon-edit" src={Edit} alt="icono editar" />
-              </a>
-              <a id="deleteLink" href="../../components/modal/Modal.jsx" data-toggle="modal" data-target="#deleteModal" data-travel-id={travel.id}>
-                <img className="icon-delete" src={Delete} alt="icono borrar" />
-              </a>
-            </>
-          )}
+        <div className="icon-container"> 
+          {/* <Link to={`/edit/${details.id}`}> */}
+            <img className="icon-edit" src={editIcon} alt="icono editar" />
+          {/* </Link> */}
+
+          <img className="icon-delete" src={deleteIcon} alt="icono borrar" onClick={handleDeleteClick} />
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onDelete={handleDelete}
+        confirmationMessage="¿Quieres eliminar este destino?"
+      />
     </div>
   );
-};
-
-export default DestinationDetail;
+}
