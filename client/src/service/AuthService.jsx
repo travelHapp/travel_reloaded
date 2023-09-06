@@ -21,19 +21,20 @@ const AuthService = {
     }
   },
 
-  logout: async () => {
-    try {
-      // Aquí puedes realizar la lógica necesaria para cerrar la sesión del usuario, como eliminar el token de autenticación, etc.
-      // Puedes realizar una solicitud al backend si es necesario.
-      
-      // Ejemplo de borrado de token en localStorage:
-      localStorage.removeItem('auth_token');
-      
-      // Puedes realizar otras acciones necesarias para cerrar la sesión.
-    } catch (error) {
-      throw error;
-    }
-  },
+
+handleLogout: async () => {
+  try {
+
+    await axios.post('http://127.0.0.1:8000/api/logout');
+
+    localStorage.removeItem('token');
+
+   
+  } catch (error) {
+    console.error(error);
+  }
+},
+
 };
 
 export default AuthService;

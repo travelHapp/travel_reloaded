@@ -16,6 +16,7 @@ const apiService = {
     }
   },
   
+  
   createDestination: async (newDestinationData) => {
     try {
       const authToken = localStorage.getItem('auth_token');
@@ -68,5 +69,4 @@ const apiService = {
     }
   },
 };
-
 export default apiService;

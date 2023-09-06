@@ -5,7 +5,7 @@ import CreateDestination from "../pages/create-destination/CreateDestination";
 import EditDestination from "../pages/edit-destination/EditDestination";
 import Login from "../pages/login/login";
 import RegistrationForm from "../pages/registration-form/RegistrationForm";
-
+import Logout from '../components/logout/Logout';
 // import DeleteDestination from './pages/delete-destination/DeleteDestination';
 
 const Router = ({ isAuthenticated }) => {
@@ -15,6 +15,7 @@ const Router = ({ isAuthenticated }) => {
       <Route path="/" element={<Home isAuthenticated />} />
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
       <Route
         path="/create-destination"
         element={

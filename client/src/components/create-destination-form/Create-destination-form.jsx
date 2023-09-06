@@ -1,131 +1,190 @@
-import React, { Component } from 'react';
-import './Create-destination-form.css'; 
+import React, { useState } from 'react';
+import './Create-destination-form.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import fileIcon from '../../assets/images/File-icon.svg';
+import axios from 'axios';
 
-class CrearDestino extends Component {
-    constructor(props) {
-        super(props);
+function CrearDestino() {
+  const [errors, setErrors] = useState([]);
+  const [formDataState, setFormDataState] = useState({
+    name: '',
+    location: '',
+    image: '',
+    description: '',
+  });
 
-        this.state = {
-            errors: [], 
-            name: '',
-            location: '',
-            image: null,
-            description: '',
-        };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const { name, location, image, description } = formDataState;
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('location', location);
+    formData.append('image', image);
+    formData.append('description', description);
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/create', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      if (response.status === 200) {
+        console.log('Destino enviado exitosamente');
+        // Puedes redirigir al usuario a otra página aquí si es necesario
+      }
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error.response);
+      if (error.response && error.response.data && error.response.data.errors) {
+        setErrors(error.response.data.errors);
+      }
     }
+  };
 
-    handleSubmit = async (event) => {
-        event.preventDefault();
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormDataState({
+      ...formDataState,
+      [name]: value,
+    });
+  };
 
-        const { name, location, image, description } = this.state;
+  const handleImageChange = (event) => {
+    setFormDataState({
+      ...formDataState,
+      image: event.target.files[0],
+    });
+  };
 
-        
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('location', location);
-        formData.append('image', image);
-        formData.append('description', description);
+  return (
+    <div className="form-container p-4 rounded-4">
+      <div>
+        <div>
+          <h2 className="Title">Crear destino</h2>
 
-        try {
-            const response = await fetch('http://localhost:8000/api/', {
-                method: 'POST',
-                body: formData,
-               
-            });
-
-            if (!response.ok) {
-                
-                const responseData = await response.json(); 
-                if (responseData.errors) {
-                    this.setState({ errors: responseData.errors });
-                }
-            } else {
-                
-                console.log('Formulario enviado exitosamente');
-            }
-        } catch (error) {
-            console.error('Error al enviar el formulario:', error);
-        }
-    }
-
-    handleInputChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({ [name]: value });
-    }
-
-    handleImageChange = (event) => {
-        this.setState({ image: event.target.files[0] });
-    }
-
-    render() {
-        const { errors } = this.state;
-
-        return (
-            <div className="form-container p-4 rounded-4">
-                <div>
-                    <div>
-                        <h2 className='Title'>Crear destino</h2>
-
-                        {errors.length > 0 && (
-                            <div className="alert alert-danger mt-2">
-                                <strong>Lo lamento, algo salió mal...</strong> <br />
-                                <ul>
-                                    {errors.map((error, index) => (
-                                        <li key={index}>{error}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        <form onSubmit={this.handleSubmit} className="create-dest" encType="multipart/form-data" required>
-                            
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-
-                            <div className="form_create col">
-                                <div className="columna1 col-md-6">
-                                    <div className="mb-4">
-                                        <label htmlFor="validationTooltip01" className="form-label">Título</label>
-                                        <input type="text" name="name" className="shadow-top rounded rounded-pill input" id="validationTooltip01" placeholder="Indica el nombre del destino" required/>
-                                    </div>
-                                    <div className="mb-4">
-                                        <label htmlFor="validationTooltip01" className="form-label">Ubicación</label>
-                                        <input type="text" name="location" className="shadow-top rounded-pill input" id="validationTooltip01" placeholder="Indica el destino" required/>
-                                    </div>
-
-                                    <div className="add_file mb-5">
-                                        <label htmlFor="validationTextarea" className="form-label">Imagen</label>
-                                        <div className="input-group position-relative">
-                                            <label className="input-group-text position-absolute input-label" htmlFor="fileInput">
-                                                <input type="file" name="image" id="fileInput" className="d-none input" accept="image/*" required/>
-                                                <img className="img_add" src={fileIcon} alt="Icono de carpeta" width="30" height="30" />
-                                            </label>
-                                        <input type="text" class="shadow-top rounded-pill inputimg" placeholder="Sube una imagen" readOnly required></input>
-                                        </div>
-                                        <div className="invalid-feedback">Ejemplo de retroalimentación de archivo no válido</div>
-                                    </div>
-
-                                </div>
-
-                                <div className="columna2 col-md-6">
-                                    <div className="mb-3 row">
-                                        <label htmlFor="validationTextarea" className="form-label">¿Por qué quieres viajar allí?</label>
-                                        <textarea className=" shadow-top p-4 rounded-4 custom-textarea" name="description" id="validationTextarea" placeholder="Cuéntanos por qué te gusta este destino" required ></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mb-1">
-                                <button className="btn accept me-2 rounded-pill custom-accept" type="submit" >Aceptar</button>
-                                <a href="/" className="btn rounded-pill custom-cancel">Cancelar</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+          {errors.length > 0 && (
+            <div className="alert alert-danger mt-2">
+              <strong>Lo lamento, algo salió mal...</strong> <br />
+              <ul>
+                {errors.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+              </ul>
             </div>
-        
-        );
-    }
+          )}
+
+          <form
+            onSubmit={handleSubmit}
+            className="create-dest"
+            encType="multipart/form-data"
+            required
+          >
+            <div className="form_create col">
+              <div className="columna1 col-md-6">
+                <div className="mb-4">
+                  <label htmlFor="name" className="form-label">
+                    Título
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="shadow-top rounded rounded-pill input"
+                    id="name"
+                    placeholder="Indica el nombre del destino"
+                    required
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="location" className="form-label">
+                    Ubicación
+                  </label>
+                  <input
+                    type="text"
+                    name="location"
+                    className="shadow-top rounded-pill input"
+                    id="location"
+                    placeholder="Indica el destino"
+                    required
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="add_file mb-5">
+                  <label htmlFor="image" className="form-label">
+                    Imagen
+                  </label>
+                  <div className="input-group position-relative">
+                    <label
+                      className="input-group-text position-absolute input-label"
+                      htmlFor="image"
+                    >
+                      <input
+                        type="file"
+                        name="image"
+                        id="image"
+                        className="d-none input"
+                        accept="image/*"
+                        required
+                        onChange={handleImageChange}
+                      />
+                      <img
+                        className="img_add"
+                        src={fileIcon}
+                        alt="Icono de carpeta"
+                        width="30"
+                        height="30"
+                      />
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow-top rounded-pill inputimg"
+                      placeholder="Sube una imagen"
+                      readOnly
+                      required
+                    />
+                  </div>
+                  <div className="invalid-feedback">
+                    Ejemplo de retroalimentación de archivo no válido
+                  </div>
+                </div>
+              </div>
+
+              <div className="columna2 col-md-6">
+                <div className="mb-3 row">
+                  <label htmlFor="description" className="form-label">
+                    ¿Por qué quieres viajar allí?
+                  </label>
+                  <textarea
+                    className=" shadow-top p-4 rounded-4 custom-textarea"
+                    name="description"
+                    id="description"
+                    placeholder="Cuéntanos por qué te gusta este destino"
+                    required
+                    onChange={handleInputChange}
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div className="mb-1">
+              <button
+                className="btn accept me-2 rounded-pill custom-accept"
+                type="submit"
+              >
+                Aceptar
+              </button>
+              <a href="/" className="btn rounded-pill custom-cancel">
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default CrearDestino;

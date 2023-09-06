@@ -67,7 +67,7 @@ Esta es una aplicación para guardar y compartir destinos, entoncés para que te
 
 y finalmente para ver el proyecto en tú navegador ejecuta el comando 
 
-`php artisan server`
+`php artisan server` 
 
 Y disfruta de la experiencia de ver y guardar destinos.
 
