@@ -29,7 +29,7 @@ const Router = ({ isAuthenticated }) => {
           isAuthenticated ? <EditDestination /> : <Navigate to="/login" />
         }
       />
-   <Route path="/destination/:id" element={<DetailDestination />} />
+   <Route path="/detail-destination/:id" element={<DetailDestination />} />
 
     </Routes>
   );
