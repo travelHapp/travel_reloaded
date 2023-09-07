@@ -6,9 +6,8 @@ import DeleteIcon from '../../assets/images/Delete-icon.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
-const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
+const DestinationCard = ({ travel, isAuthenticated }) => {
   const imageUrl = `http://127.0.0.1:8000/storage/${travel.image}`;
-  const destinationOwnerId = travel.user_id;
 
   return (
     <div className="card" style={{ width: '17rem' }}>
@@ -20,12 +19,12 @@ const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
       <img className="card-img-top" src={imageUrl} alt="Card cap" />
       <div className="card-body">
         <div className="icon-container desktop">
-          {isAuthenticated && authenticatedUserId === destinationOwnerId && (
+          {isAuthenticated && (
             <Link to={`/edit-destination/${travel.id}`} className="card-link">
               <img className="icon-edit" src={EditIcon} alt="icono editar" />
             </Link>
           )}
-          {isAuthenticated && authenticatedUserId === destinationOwnerId && (
+          {isAuthenticated && (
             <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
               <img className="icon-delete" src={DeleteIcon} alt="icono borrar" />
             </a>

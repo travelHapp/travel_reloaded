@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import DestinationCard from '../../components/destination-card/Card';
-import apiService from '../../service/service';
+import apiService from '../../services/service';
 import './Home.css';
+import { useAuth } from '../../context/AuthContext';
+import ProtectedRoute from '../../components/PrivateRoute';
 
 const Home = () => {
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const imageUrl = 'http://127.0.0.1:8000/api';
-  const isAuthenticated = localStorage.getItem('auth_token') !== undefined;
+  
 
   useEffect(() => {
     apiService.getAllDestinations()
@@ -31,10 +33,10 @@ const Home = () => {
           destinations.map(travel => (
             <div className="destination-card" key={travel.id}>
               <DestinationCard
-                authenticatedUserId={travel.user_id}
+                
                 travel={travel}
                 imageUrl={imageUrl}
-                isAuthenticated={isAuthenticated} 
+                isAuthenticated={true}
               />
             </div>
           ))

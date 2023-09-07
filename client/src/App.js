@@ -4,14 +4,13 @@ import Nav from "./components/nav/Nav";
 
 
 function App() {
-  const isAuthenticated = localStorage.getItem('auth_token') !== undefined;
 
 
   return (
     <>
-    <Nav isAuthenticated={isAuthenticated}/>
+    <Nav/>
     <BrowserRouter>
-        <Router isAuthenticated={isAuthenticated} />     
+        <Router />     
     </BrowserRouter>
     </>
   );

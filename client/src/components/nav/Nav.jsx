@@ -46,7 +46,7 @@ const Nav = ({isAuthenticated}) => {
                 <img
                   className="icon-nav" src={create} alt="icono de agregar destino"/>
               </a>
-              <a href="/" className="nav-link">
+              <a href="/logout" className="nav-link">
                 <img
                   className="icon-nav" src={Logout} alt="icono de cerrar sesión"
                 />
