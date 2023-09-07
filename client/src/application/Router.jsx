@@ -1,29 +1,37 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../pages/home/Home';
-import CreateDestination from '../pages/create-destination/CreateDestination';
-import RegistrationForm from '../pages/registration-form/RegistrationForm';
-import Login from '../pages/login/login';
-import EditDestination from '../pages/edit-destination/EditDestination';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "../pages/home/Home";
+import CreateDestination from "../pages/create-destination/CreateDestination";
+import EditDestination from "../pages/edit-destination/EditDestination";
+import Login from "../pages/login/login";
+import RegistrationForm from "../pages/registration-form/RegistrationForm";
 import Logout from '../components/logout/Logout';
-// import DestinationDetail from './pages/DestinationDetail';
+import DetailDestination from '../pages/detail-destination/DestinationDetail';
+// import DeleteDestination from './pages/delete-destination/DeleteDestination';
 
-const Router = () => {
+const Router = ({ isAuthenticated }) => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/create-destination" element={<CreateDestination/>} />
-        <Route path="/register" element={<RegistrationForm/>} />
-        <Route path="/edit-destination/:id" element={<EditDestination/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/logout" element={<Logout />} />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/register" element={<RegistrationForm />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
+      <Route
+        path="/create-destination"
+        element={ <CreateDestination />
+          // isAuthenticated ? <CreateDestination /> : <Navigate to="/login" />
+        }
+      />
 
-        
-        {/*<Route path="/destination/:id" element={<DestinationDetail/>} /> */}
-      
-      </Routes>
-    </BrowserRouter>
+      <Route
+        path="/edit-destination/:id"
+        element={
+          isAuthenticated ? <EditDestination /> : <Navigate to="/login" />
+        }
+      />
+   <Route path="/detail-destination/:id" element={<DetailDestination />} />
+
+    </Routes>
   );
 };
 

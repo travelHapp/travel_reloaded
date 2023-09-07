@@ -73,7 +73,9 @@ Si estás usando yarn, emplea este comando: `yarn add react-router-dom@6`<br>
 6. [Como instalar axios](https://www.npmjs.com/package/axios). Comando `npm install axios`
 6. Para poder ver el proyecto tienes que acceder a tu terminal en la carpeta de `client` con el comando `cd + carpeta-correspondiente-donde-quieras-entrar` una vez ahí, ejecuta `npm start`
 
-  
+y finalmente para ver el proyecto en tú navegador ejecuta el comando 
+
+`php artisan server` 
 
 Y disfruta de la experiencia de ver y guardar destinos.
 

@@ -17,7 +17,7 @@ const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
           <img className="icon-info" src={InfoIcon} alt="icono info" />
         </Link>
       )}
-      <img className="card-img-top" src={imageUrl} alt="Card image cap" />
+      <img className="card-img-top" src={imageUrl} alt="Card cap" />
       <div className="card-body">
         <div className="icon-container desktop">
           {isAuthenticated && authenticatedUserId === destinationOwnerId && (

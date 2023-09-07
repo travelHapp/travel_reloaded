@@ -1,4 +1,12 @@
-.modal-dialog {
+.modal {
+    display: none;
+  }
+  
+  .modal.open {
+    display: block; 
+  }
+
+  .modal-dialog {
     display: flex;
     align-items: center;
     justify-content: center;

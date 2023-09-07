@@ -77,11 +77,15 @@ class TravelController extends Controller
         $image->move(storage_path('app/public'), $imageName);
         $travel->image = $imageName;
 
-        if ($travel->image) {
-            Storage::delete($travel->image);
+        if ($request->hasFile('image')) {
+            // Sube la imagen y almacena la ruta en la base de datos
+            $imagePath = $request->file('image')->store('images', 'public');
+            $data['image'] = $imagePath;
         }
 
-        $travel->image = $imagePath;
+        $travel = Travel::create($data);
+
+        return response()->json(['message' => 'Destino creado correctamente', 'travel' => $travel], 201);
     }
 
     // Actualizar campos si se proporcionan en la solicitud

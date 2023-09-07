@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
+import "../../components/modal/Modal.css";
 
-const DeleteConfirmationModal = ({ show, onClose, onDelete }) => {
-  return (
-    <div className={`modal fade ${show ? 'show' : ''}`} id="deleteModal" tabIndex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden={!show}>
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-          <div className="modal-body">
-            ¿Quieres eliminar este elemento?
-          </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-danger accept-button" onClick={onDelete}>Aceptar</button>
-            <button type="button" className="btn btn-secondary cancel-button" data-dismiss="modal" onClick={onClose}>Cancelar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+const Modal = (props) => {
+    return (
+        <div className={`modal ${props.isOpen ? "open" : ""}`}>
+            <div className="modal-background"></div>
+            <div className="modal-content">
+                <span onClick={props.onClose} className="modal-close-btn">&times;</span>
+                <h3 className="modal-title"> ¿Quieres eliminar este destino?</h3>
+                <div className="container-btn">
+                    <button type="button" className="btn btn-primary" onClick={props.onDelete}>Aceptar</button>
+                    <button type="button" className="btn btn-secondary" onClick={props.onClose}>Cancelar</button>
+                </div>
+            </div>
+         </div>
+    );
 };
 
-export default DeleteConfirmationModal;
-
+export default Modal;
