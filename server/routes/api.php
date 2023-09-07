@@ -24,13 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/', [TravelController::class, 'index']);
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
-    Route::post('create', [TravelController::class, 'store']);
+    Route::post('/create', [TravelController::class, 'store']);
     Route::get('/{travel}', [TravelController::class, 'show']);
     Route::put('/{travel}', [TravelController::class, 'update']);
     Route::delete('/{travel}', [TravelController::class, 'destroy']);
-    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });

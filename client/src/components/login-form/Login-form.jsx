@@ -13,22 +13,23 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/login', {
-        email: email,
-        password: password,
-      });
-      console.log(response.data.msg);
+        const response = await axios.post('http://127.0.0.1:8000/api/login', {
+            email: email,
+            password: password,
+        });
 
-      
-      localStorage.setItem('token', response.data.token);
+        const { token, user_id } = response.data; // Extrae el token y el userId
 
-      
-      navigate('/');
+        // Almacena el token y el userId en el almacenamiento local
+        localStorage.setItem('token', token);
+        localStorage.setItem('user_id', user_id);
+
+        navigate('/');
     } catch (error) {
-      console.error(error);
-      setError('Credenciales incorrectas');
+        console.error(error);
+        setError('Credenciales incorrectas');
     }
-  };
+};
 
   return (
     <main className="signup-form">
