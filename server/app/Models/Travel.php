@@ -11,10 +11,20 @@ class Travel extends Model
 
     protected $table = 'destinations';
 
-    protected $fillable = ['name', 'location', 'image', 'description','privacy'];
+    protected $fillable = ['name', 'location', 'image', 'description', 'user_id'];
+
+    protected $hidden = ['created_at', 'updated_at'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    static function search($query)
+    {
+        $results = Travel::where('title', 'LIKE', "%$query%")
+                              ->orWhere('location', 'LIKE', "%$query%")
+                              ->get();
+        return $results;
     }
 }

@@ -19,13 +19,13 @@ Hablando de Vacaciones, ¿A quién no le gusta viajar y conocer lugares nuevos? 
 ## Mockups
 
 #### Atomic Design
-<img src="./laravel/public/assets/atomic-desing.png" width="400px">
+<img src="./client/src/assets/images/atomic-desing.png" width="400px">
 
 #### Versión Desktop
-<img src="./laravel/public/assets/desktop.png" width=900px>
+<img src="./client/src/assets/images/desktop.png" width=900px>
 
 #### Versión Mobile
-<img src="./laravel/public/assets/version-mobile.png" width=900px>
+<img src="./client/src/assets/images/version-mobile.png" width=900px>
 
 
 ## 🛠 Tecnologías

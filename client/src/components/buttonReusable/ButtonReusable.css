@@ -1,0 +1,21 @@
+
+
+.btn-aceptar{
+    background-color: var(--green-button);
+
+}
+
+.btn-cancelar{
+    background-color: var(--pink-button);
+
+}
+
+button{
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-top: 5em;  
+    border: none;
+    font-family: 'Jaldi', sans-serif;;
+}

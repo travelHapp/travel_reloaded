@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('description');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->enum('privacy', ['public', 'private'])->default('public');
         });
     }
 
@@ -26,6 +28,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('destinations');
+        Schema::table('destinations', function (Blueprint $table) {
+            $table->dropColumn(['user_id', 'privacy']);
+        });
     }
 };
