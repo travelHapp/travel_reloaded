@@ -73,7 +73,7 @@ export default function DestinationDetail() {
         {element.image && (
           <img
             className="show-image"
-            src={`http://127.0.0.1:8000/${element.image}`}
+            src={`http://127.0.0.1:8000/storage/${element.image}`}
             alt="Imagen del destino"
           />
         )}
