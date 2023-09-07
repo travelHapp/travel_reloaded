@@ -6,7 +6,7 @@ import Avatar from '../../assets/images/Avatar-icon.svg';
 import create from '../../assets/images/Create-icon.svg';
 import Logout from '../../assets/images/Logout-icon.svg';
 import home from '../../assets/images/Home-icon.svg';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
@@ -34,6 +34,8 @@ const Nav = () => {
     }
   };
   
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   return (
     <>
@@ -44,6 +46,7 @@ const Nav = () => {
 
         <div className="navbar-right">
           <div className="search-input-container">
+          {isHomePage && (
             <form id="search-form" action="/travel/search" method="GET">
               <div className="search-container">
                 <input
@@ -61,6 +64,7 @@ const Nav = () => {
                 />
               </div>
             </form>
+            )}
           </div>
           <div className="navbar-icons">
             {isLoggedIn ? (
