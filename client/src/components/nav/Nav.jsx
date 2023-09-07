@@ -40,7 +40,7 @@ const Nav = ({isAuthenticated}) => {
             </div>
             <div className="navbar-icons">
               <a href="/register" className="nav-link">
-                <img className="icon-nav" src={Avatar} alt="icono perfil" />
+                <img className="icon-nav registerIcon" src={Avatar} alt="icono perfil" />
               </a>
               <a href="/create-destination" className="nav-link">
                 <img
