@@ -6,26 +6,47 @@ import editIcon from '../../assets/images/Edit-icon.svg'
 import deleteIcon from '../../assets/images/Delete-icon.svg';
 import Modal from '../../components/modal/Modal';
 import { deleteTravel } from '../../service/ApiDeleteTravel';
+import Nav from '../../components/nav/Nav';
+import axios from 'axios';
 
 export default function DestinationDetail() {
   const { id } = useParams();
+  const id2 = parseInt(id);
   const [travel, setDetails] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [element, setElement] = useState({});
+
 
   useEffect(() => {
-    const fetchDetails = async () => {
+    // const fetchDetails = async () => {
+    //   try {
+    //     const token = localStorage.getItem('token');
+    //     const travelDetails = await fetchCardDetails(id, token);
+    //     setDetails(travelDetails);
+    //     // Imprime la URL de la imagen en la consola
+    //     console.log('URL de la imagen:', `http://127.0.0.1:8000/${travel.image}`);
+    //   } catch (error) {
+    //     console.error('Error fetching card details:', error);
+    //   }
+    // };
+
+    // fetchDetails();
+
+    const fetchData = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const travelDetails = await fetchCardDetails(id, token);
-        setDetails(travelDetails);
-        // Imprime la URL de la imagen en la consola
-        console.log('URL de la imagen:', `http://127.0.0.1:8000/${travelDetails.image}`);
+        const response = await axios.get('http://localhost:8000/api');
+        const data = response.data; // El JSON completo
+
+       
+         const filteredElement = data.find(el => el.id === id2);
+        setElement(filteredElement);
+       
       } catch (error) {
-        console.error('Error fetching card details:', error);
+        console.log(error);
       }
     };
 
-    fetchDetails();
+    fetchData();
   }, [id]);
 
   const handleDeleteClick = () => {
@@ -45,23 +66,23 @@ export default function DestinationDetail() {
       console.error('Error al eliminar el elemento:', error);
     }
   };
-
-  return (
+  return (<>
+  <Nav />
     <div className="container">
       <div className="show-container">
-        {travel.image && (
+        {element.image && (
           <img
             className="show-image"
-            src={`http://127.0.0.1:8000/${travel.image}`}
+            src={`http://127.0.0.1:8000/${element.image}`}
             alt="Imagen del destino"
           />
         )}
         <div className="text-container">
           <div className="titles-container">
-            <h2 className="travel-name">{travel.name}</h2>
-            <h3 className="travel-location">{travel.location}</h3>
+            <h2 className="travel-name">{element.name}</h2>
+            <h3 className="travel-location">{element.location}</h3>
           </div>
-          <p className="travel-description">{travel.description}</p>
+          <p className="travel-description">{element.description}</p>
         </div>
         <div className="icon-container">
           <img className="icon-edit" src={editIcon} alt="icono editar" />
@@ -75,5 +96,6 @@ export default function DestinationDetail() {
         confirmationMessage="¿Quieres eliminar este destino?"
       />
     </div>
+    </>
   );
 }
