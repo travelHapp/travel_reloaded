@@ -1,5 +1,5 @@
 .form-container {
-    border: 5px solid var(--background-color);
+    border: 4px solid var(--yellow-light, #FBFDCE);
     padding: 20px;
     margin: auto;
     margin-top: 5%;
@@ -130,7 +130,8 @@ button.accept.custom-accept{
 @media (max-width: 768px) {
 
     .form-container{
-        width: 100%;
+        width: 98%;
+        margin: 0 auto;
         border: 2px solid var(--background-color);
     }
 
@@ -163,6 +164,8 @@ button.accept.custom-accept{
 
 
 @media (min-width: 768px) {
+
+  
     .form_create {
         flex-direction: row;
         width: 100%; 

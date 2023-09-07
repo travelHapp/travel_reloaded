@@ -10,6 +10,10 @@ const Registration = () => {
         password: '',
     });
 
+    const [isNameRequired, setIsNameRequired] = useState(false);
+    const [isEmailRequired, setIsEmailRequired] = useState(false);
+    const [isPasswordRequired, setIsPasswordRequired] = useState(false);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -35,8 +39,8 @@ const Registration = () => {
     return (
         <main className="signup-form">
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
+                <div>
+                    <div>
                         <div className="form-registration">
                          
                             <div className="form-body">
@@ -57,7 +61,11 @@ const Registration = () => {
                                             autoFocus
                                             value={formData.name}
                                             onChange={handleInputChange}
+                                            onBlur={() => setIsNameRequired(formData.name.trim() === '')}
                                         />
+                                         {isNameRequired && <div className="error-message">Nombre requerido</div>}
+
+
                                     </div>
                                     <div className="form-email">
                                         <label htmlFor="email" className="form-label">Email</label>
@@ -71,7 +79,9 @@ const Registration = () => {
                                             autoFocus
                                             value={formData.email}
                                             onChange={handleInputChange}
+                                            onBlur={() => setIsEmailRequired(formData.email.trim() === '')}
                                         />
+                                          {isEmailRequired && <div className="error-message">Email requerido</div>}
                                     </div>
                                     <div className="form-password">
                                         <label htmlFor="password" className="form-label">Contraseña</label>
@@ -84,13 +94,15 @@ const Registration = () => {
                                             required
                                             value={formData.password}
                                             onChange={handleInputChange}
+                                            onBlur={() => setIsPasswordRequired(formData.password.trim() === '')}
                                         />
+                                          {isPasswordRequired && <div className="error-message">Contraseña requerida</div>}
                                     </div>
                                     <div className="form-buttons">
                                         <button type="submit" className="accept-button">Aceptar</button>
                                         <a href="/" className="cancel-button">Cancelar</a>
                                     </div>
-                                    <div className="login-acces"><p className='form-question'>¿Ya tienes una cuenta? Accede</p><a className="acces" href="/login"> Aquí</a></div>
+                                    <div className="login-acces"><p className='form-question'>¿Ya tienes una cuenta? Accede</p><a className="acces" href="/login">Aquí</a></div>
                                 </form>
                             </div>
                         </div>

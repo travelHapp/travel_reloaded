@@ -8,9 +8,28 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [isEmailEmpty, setIsEmailEmpty] = useState(false);
+const [isPasswordEmpty, setIsPasswordEmpty] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!email.trim()) {
+    setIsEmailEmpty(true);
+  } else {
+    setIsEmailEmpty(false);
+  }
+
+  if (!password.trim()) {
+    setIsPasswordEmpty(true);
+  } else {
+    setIsPasswordEmpty(false);
+  }
+
+  if (!email.trim() || !password.trim()) {
+    return;
+  }
+
 
     try {
         const response = await axios.post('http://127.0.0.1:8000/api/login', {
@@ -49,6 +68,7 @@ function LoginForm() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              {isEmailEmpty && <div className="error-message">Email requerido</div>}
             </div>
             <div>
               <label className='form-label'>Contraseña:</label>
@@ -60,6 +80,7 @@ function LoginForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              {isPasswordEmpty && <div className="error-message">Contraseña requerida</div>}
             </div>
             <div className="form-buttons">
               <button type="submit" className="accept-button">Aceptar</button>

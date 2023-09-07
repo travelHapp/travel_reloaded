@@ -9,9 +9,11 @@ import './Card.css';
 const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
   const imageUrl = `http://127.0.0.1:8000/storage/${travel.image}`;
   const destinationOwnerId = travel.user_id;
+ 
+ 
 
   return (
-    <div className="card" style={{ width: '17rem' }}>
+    <div className="card">
       {isAuthenticated && (
         <Link to={`/destination/${travel.id}`} className="card-link">
           <img className="icon-info" src={InfoIcon} alt="icono info" />

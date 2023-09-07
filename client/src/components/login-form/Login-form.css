@@ -126,3 +126,20 @@ color: #0079FF;
     font-weight: 700;
 color: #00DFA2;
 }
+
+.error-input {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .form-registration{
+        margin: 0 auto;
+       width: 90%;
+    }
+  }
