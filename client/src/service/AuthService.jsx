@@ -12,29 +12,25 @@ const AuthService = {
     }
   },
 
-  login: async (credentials) => {
+  login: async (credentials, navigate) => {
     try {
       const response = await axios.post(`${BASE_URL}/login`, credentials);
+      localStorage.setItem('token', response.data.token);
+      navigate('/');
       return response.data;
     } catch (error) {
       throw error;
     }
   },
 
-
-handleLogout: async () => {
-  try {
-
-    await axios.post('http://127.0.0.1:8000/api/logout');
-
-    localStorage.removeItem('token');
-
-   
-  } catch (error) {
-    console.error(error);
-  }
-},
-
+  handleLogout: async () => {
+    try {
+      await axios.post(`${BASE_URL}/logout`);
+      localStorage.removeItem('token');
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 export default AuthService;

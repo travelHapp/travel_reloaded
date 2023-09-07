@@ -26,9 +26,9 @@ const DestinationCard = ({ travel, isAuthenticated, authenticatedUserId }) => {
             </Link>
           )}
           {isAuthenticated && authenticatedUserId === destinationOwnerId && (
-            <a id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
+            <button id="deleteLink" href="#" data-toggle="modal" data-target="#deleteModal">
               <img className="icon-delete" src={DeleteIcon} alt="icono borrar" />
-            </a>
+            </button>
           )}
         </div>
         <h5 className="card-title">{travel.name}</h5>

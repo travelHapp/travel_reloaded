@@ -35,7 +35,6 @@
   }
   .icon-edit, .icon-delete{
     padding: 0px 5px;
-    
   }
   .icon-info{
     width: 40px;
@@ -52,6 +51,7 @@
     position:absolute;
     right: 1px;
   }
+  
   @media (max-width: 767px) {
     .card-link {
         display: flex;

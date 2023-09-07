@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Nav from '../../components/nav/Nav';
 import DestinationCard from '../../components/destination-card/Card';
+// import Borrar from '../../components/Borrar';
 import apiService from '../../service/service';
 import './Home.css';
 
@@ -23,19 +26,23 @@ const Home = () => {
 
   return (
     <>
-      
+      <Nav />
+      {/* <Borrar /> */}
       <div className="destination-grid">
         {isLoading ? (
           <p>Cargando destinos...</p>
         ) : (
           destinations.map(travel => (
             <div className="destination-card" key={travel.id}>
-              <DestinationCard
-                authenticatedUserId={travel.user_id}
-                travel={travel}
-                imageUrl={imageUrl}
-                isAuthenticated={isAuthenticated} 
-              />
+              {/* Enlace a la página DestinationDetail */}
+              <Link to={`/detail-destination/${travel.id}`}>
+                
+                <DestinationCard
+                  travel={travel}
+                  imageUrl={imageUrl}
+                  isAuthenticated={false} 
+                />
+              </Link>
             </div>
           ))
         )}

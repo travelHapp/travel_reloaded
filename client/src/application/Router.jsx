@@ -6,6 +6,7 @@ import EditDestination from "../pages/edit-destination/EditDestination";
 import Login from "../pages/login/login";
 import RegistrationForm from "../pages/registration-form/RegistrationForm";
 import Logout from '../components/logout/Logout';
+import DetailDestination from '../pages/detail-destination/DestinationDetail';
 // import DeleteDestination from './pages/delete-destination/DeleteDestination';
 
 const Router = ({ isAuthenticated }) => {
@@ -29,18 +30,8 @@ const Router = ({ isAuthenticated }) => {
           isAuthenticated ? <EditDestination /> : <Navigate to="/login" />
         }
       />
-      {/* <Route
-          path="/detail-destination/:id"
-          element={ 
-            isAuthenticated ? <DetailDestination /> : <Navigate to="/login" /> }
-        /> */}
+   <Route path="/detail-destination/:id" element={<DetailDestination />} />
 
-      {/* <Route
-        path="/delete-destination/:id"
-        element={ 
-          isAuthenticated ? <DeleteDestination /> : <Navigate to="/login" /> }
-      /> */}
-      
     </Routes>
   );
 };

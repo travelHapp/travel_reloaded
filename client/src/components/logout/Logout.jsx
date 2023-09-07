@@ -1,35 +1,30 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import AuthService from '../../service/AuthService';
+import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleLogout = async () => {
-        try {
-            const csrfToken = window.csrfToken;
-          const token = localStorage.getItem('token');
-      
-          await axios.post('http://127.0.0.1:8000/api/logout', {}, {
-            headers: {
-              'X-CSRF-TOKEN': csrfToken,
-              'Authorization': `Bearer ${token}`,
-            },
-          });
-      
-          localStorage.removeItem('token');
-      
-          window.location.href = '/';
+      try {
+        await AuthService.handleLogout();
 
-          console.log('Logout exitoso');
-        } catch (error) {
-          console.error(error);
-        }
-      };
-      
+        navigate('/');
+
+        console.log('Logout exitoso');
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
     handleLogout();
-  }, []);
+  }, [navigate]);
 
   return null;
 };
 
 export default Logout;
+
+
+
