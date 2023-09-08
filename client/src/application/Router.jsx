@@ -7,30 +7,18 @@ import Login from "../pages/login/login";
 import RegistrationForm from "../pages/registration-form/RegistrationForm";
 import Logout from '../components/logout/Logout';
 import DetailDestination from '../pages/detail-destination/DestinationDetail';
-// import DeleteDestination from './pages/delete-destination/DeleteDestination';
 
-const Router = ({ isAuthenticated }) => {
+
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
-      <Route
-        path="/create-destination"
-        element={ <CreateDestination />
-          // isAuthenticated ? <CreateDestination /> : <Navigate to="/login" />
-        }
-      />
-
-      <Route
-        path="/edit-destination/:id"
-        element={
-          isAuthenticated ? <EditDestination /> : <Navigate to="/login" />
-        }
-      />
-      
-   <Route path="/detail-destination/:id" element={<DetailDestination />} />
+      <Route path="/create-destination" element={ <CreateDestination />} />
+      <Route path="/edit-destination/:id" element={<EditDestination />} />
+      <Route path="/detail-destination/:id" element={<DetailDestination />} />
 
     </Routes>
   );

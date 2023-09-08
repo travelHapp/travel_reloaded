@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCardDetails } from '../../service/fetchCardDetails.jsx';
+import { Link } from 'react-router-dom';
 import '../../pages/detail-destination/DestinationDetail.css';
-import editIcon from '../../assets/images/Edit-icon.svg'
 import deleteIcon from '../../assets/images/Delete-icon.svg';
+import EditIcon from '../../assets/images/Edit-icon.svg';
 import Modal from '../../components/modal/Modal';
 import { deleteTravel } from '../../service/ApiDeleteTravel';
-import Nav from '../../components/nav/Nav';
 import axios from 'axios';
 
 export default function DestinationDetail() {
@@ -67,7 +67,6 @@ export default function DestinationDetail() {
     }
   };
   return (<>
-  <Nav />
     <div className="container">
       <div className="show-container">
         {element.image && (
@@ -85,7 +84,10 @@ export default function DestinationDetail() {
           <p className="travel-description">{element.description}</p>
         </div>
         <div className="icon-container">
-          <img className="icon-edit" src={editIcon} alt="icono editar" />
+          <Link to={`/edit-destination/${travel.id}`} className="card-link">
+              <img className="icon-edit" src={EditIcon} alt="icono editar" />
+            </Link>
+          
           <img className="icon-delete" src={deleteIcon} alt="icono borrar" onClick={handleDeleteClick} />
         </div>
       </div>
