@@ -23,7 +23,7 @@ const apiService = {
       const headers = {
         Authorization: `Bearer ${authToken}`,
       };
-      const response = await axios.post(`${BASE_URL}/happy_travel.store`, newDestinationData, { headers });
+      const response = await axios.post(`${BASE_URL}/create`, newDestinationData, { headers });
       return response.data;
     } catch (error) {
       throw error;

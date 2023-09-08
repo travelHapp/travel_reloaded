@@ -21,6 +21,7 @@
 }
 .card-title,
 .card-text {
+  font-size: 0.6rem;
     overflow: hidden;
     white-space: normal;
 }
@@ -36,6 +37,12 @@
   }
   .icon-edit, .icon-delete{
     padding: 0px 5px;
+    width: 40px;
+  }
+
+  .icon-delete{
+    padding: 0px 5px;
+    width: 35px;
   }
   .icon-info{
     width: 40px;
@@ -44,8 +51,10 @@
     margin-top: 8px;
   }
   .icon-container{
-    display: flex;
-    justify-content: flex-end
+   position: absolute;
+   left: 70%;
+   bottom: 15%
+  
   }
   .desktop{
     position:absolute;
@@ -80,4 +89,11 @@
         display: flex;
         margin: 50px 8px!important;
     }
+
+    .icon-container{
+      position: absolute;
+      left: 70%;
+      bottom: 10%
+     
+     }
 }
