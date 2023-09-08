@@ -37,12 +37,12 @@
   }
   .icon-edit, .icon-delete{
     padding: 0px 5px;
-    width: 40px;
+    width: 35px;
   }
 
   .icon-delete{
     padding: 0px 5px;
-    width: 35px;
+    width: 30px;
   }
   .icon-info{
     width: 40px;
@@ -52,8 +52,8 @@
   }
   .icon-container{
    position: absolute;
-   left: 70%;
-   bottom: 15%
+   left: 75%;
+   bottom: 18%
   
   }
   .desktop{

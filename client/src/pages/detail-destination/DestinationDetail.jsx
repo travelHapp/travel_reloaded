@@ -83,7 +83,7 @@ export default function DestinationDetail() {
           </div>
           <p className="travel-description">{element.description}</p>
         </div>
-        <div className="icon-container">
+        <div className="icon-container-detail">
           <Link to={`/edit-destination/${travel.id}`} className="card-link">
               <img className="icon-edit" src={EditIcon} alt="icono editar" />
             </Link>
