@@ -22,10 +22,10 @@ class UpdateDestinationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'location' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description' => 'required'
+            'name' => 'sometimes',
+            'location' => 'sometimes',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'sometimes'
    
         ];
     }

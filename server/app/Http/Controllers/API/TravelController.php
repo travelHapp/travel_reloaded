@@ -8,6 +8,7 @@ use App\Http\Requests\SaveDestinationRequest;
 use App\Models\Travel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateDestinationRequest;
 
 class TravelController extends Controller
 {
@@ -60,46 +61,19 @@ class TravelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDestinationRequest $request, $id)
 {
-    // Buscar el modelo por el ID o lanzar una excepción si no se encuentra
     $travel = Travel::findOrFail($id);
 
-    // Procesar la imagen si se envía
+    $travel->fill($request->validated());
+
     if ($request->hasFile('image')) {
-
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
         $image = $request->file('image');
         $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image->move(storage_path('app/public'), $imageName);
+        $image->move(storage_path('public/storage/images'), $imageName);
         $travel->image = $imageName;
-
-        if ($request->hasFile('image')) {
-            // Sube la imagen y almacena la ruta en la base de datos
-            $imagePath = $request->file('image')->store('images', 'public');
-            $data['image'] = $imagePath;
-        }
-
-        $travel = Travel::create($data);
-
-        return response()->json(['message' => 'Destino creado correctamente', 'travel' => $travel], 201);
     }
 
-    // Actualizar campos si se proporcionan en la solicitud
-    if ($request->filled('name')) {
-        $travel->name = $request->input('name');
-    }
-    if ($request->filled('location')) {
-        $travel->location = $request->input('location');
-    }
-    if ($request->filled('description')) {
-        $travel->description = $request->input('description');
-    }
-
-    // Guardar los cambios en la base de datos
     $travel->save();
 
     return response()->json([
@@ -108,7 +82,6 @@ class TravelController extends Controller
         'data' => $travel
     ], 200);
 }
-
 
     /**
      * Remove the specified resource from storage.
