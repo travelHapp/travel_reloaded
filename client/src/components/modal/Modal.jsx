@@ -1,6 +1,9 @@
 import React from "react";
 import "../../components/modal/Modal.css";
 
+
+
+
 const Modal = (props) => {
     return (
         <div className={`modal ${props.isOpen ? "open" : ""}`}>
