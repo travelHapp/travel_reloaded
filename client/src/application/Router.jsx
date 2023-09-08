@@ -8,6 +8,7 @@ import RegistrationForm from "../pages/registration-form/RegistrationForm";
 import Logout from "../components/logout/Logout";
 import DetailDestination from "../pages/detail-destination/DestinationDetail";
 // import PrivateRoutes from "../utils/PrivateRoutes";
+import Nav from "../components/nav/Nav";
 
 const Rutas = () => {
   return (
