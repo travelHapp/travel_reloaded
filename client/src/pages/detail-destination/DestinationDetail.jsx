@@ -18,19 +18,6 @@ export default function DestinationDetail() {
 
 
   useEffect(() => {
-    // const fetchDetails = async () => {
-    //   try {
-    //     const token = localStorage.getItem('token');
-    //     const travelDetails = await fetchCardDetails(id, token);
-    //     setDetails(travelDetails);
-    //     // Imprime la URL de la imagen en la consola
-    //     console.log('URL de la imagen:', `http://127.0.0.1:8000/${travel.image}`);
-    //   } catch (error) {
-    //     console.error('Error fetching card details:', error);
-    //   }
-    // };
-
-    // fetchDetails();
 
     const fetchData = async () => {
       try {

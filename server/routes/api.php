@@ -33,4 +33,5 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::put('/{travel}', [TravelController::class, 'update']);
     Route::delete('/{travel}', [TravelController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    
 });
