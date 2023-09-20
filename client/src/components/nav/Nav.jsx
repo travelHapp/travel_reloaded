@@ -16,7 +16,8 @@ const Nav = () => {
   useEffect(() => {
     // Verificar si el usuario está autenticado al cargar el componente
     const token = localStorage.getItem('token');
-    setIsLoggedIn(!!token); // Establecer el estado de autenticación en función del token
+    setIsLoggedIn(!!token);
+    
   }, []);
 
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const Nav = () => {
     try {
       // Lógica para cerrar la sesión del usuario
       // Puedes llamar a AuthService.handleLogout() si es necesario
+
       localStorage.removeItem('token');
       setIsLoggedIn(false);
   

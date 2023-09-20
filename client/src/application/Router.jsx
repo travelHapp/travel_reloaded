@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, createBrowserRouter } from "react-router-dom";
 import Home from "../pages/home/Home";
 import CreateDestination from "../pages/create-destination/CreateDestination";
 import EditDestination from "../pages/edit-destination/EditDestination";
@@ -10,10 +10,20 @@ import DetailDestination from "../pages/detail-destination/DestinationDetail";
 // import PrivateRoutes from "../utils/PrivateRoutes";
 import Nav from "../components/nav/Nav";
 
-const Rutas = () => {
-  return (
+const Router = createBrowserRouter ([
+   {
+      path: "/",
+      element: <Home />,
+   }
+   
+]);
    
       <Routes>
+
+        {
+            path: '/places'
+            element: <Nav />
+        }
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<Login />} />
